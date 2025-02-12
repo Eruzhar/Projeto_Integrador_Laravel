@@ -32,12 +32,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'titulo' =>'required|max:255',
+            'descricao' =>'required',
+            'visibilidade' =>'required',
+            'arquivo' =>'required',
+            'categoria_id' =>'required|exists:categorias,id'
+        ]);
+
         $post = new Post();
-        $post->titulo = $request->titulo;
-        $post->descricao = $request->descricao;
-        $post->visibilidade = $request->visibilidade;
-        $post->arquivo = $request->arquivo;
-        $post->categoria_id = $request->categoria_id;
+        
+        $post->titulo = $request->input('titulo');
+        $post->descricao = $request->input('descricao');
+        $post->visibilidade = $request->input('visibilidade');
+        $post->arquivo = $request->input('arquivo');
+        $post->categoria_id = $request->input('categoria_id');
         $post->save();
         return redirect()->route("post.create");
     }
@@ -73,7 +82,7 @@ class PostController extends Controller
             'titulo' =>'required|max:255',
             'descricao' =>'required',
             'visibilidade' =>'required',
-            'arquivo' =>'required|mimes:jpeg,png,jpg',
+            'arquivo' =>'required',
             'categoria_id' =>'required|exists:categorias,id'
         ]);
 

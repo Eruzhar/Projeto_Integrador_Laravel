@@ -31,11 +31,17 @@ class CategoriaPostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'tipo' =>'required',
+            'name' =>'required',
+            'descricao' =>'required'
+        ]);
+
         $cps = new CategoriaPost();
         
-        $cps->tipo = $request->tipo;
-        $cps->name = $request->name;
-        $cps->descricao = $request->descricao;
+        $cps->tipo = $request->input('tipo');
+        $cps->name = $request->input('name');
+        $cps->descricao = $request->input('descricao');
         $cps->save();
         return redirect()->route('categoria_post.create');
     }
