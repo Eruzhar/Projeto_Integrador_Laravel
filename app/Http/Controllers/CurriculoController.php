@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Curriculo;
+use App\Models\Profissao;
 
 class CurriculoController extends Controller
 {
@@ -12,7 +13,7 @@ class CurriculoController extends Controller
      */
     public function index()
     {
-        $curriculos = Curriculo::with('trabalho')-get();
+        $curriculos = Curriculo::with('trabalho')->get();
 
         return view('curriculo.index',[
             'curriculos'=> $curriculos
@@ -24,7 +25,12 @@ class CurriculoController extends Controller
      */
     public function create()
     {
-        return view('curriculo.create');
+        //adicionado por Eric: a página de submissão precisa saber quais são as vagas disponiveis
+        $profissoes = Profissao::all();
+
+        return view('curriculo.create',[
+            'profissoes'=> $profissoes,
+        ]);
     }
 
     /**
