@@ -36,11 +36,11 @@ class CategoriaBarController extends Controller
             'descricao' =>'required'
         ]);
 
-        $cbs = new CategoriaBar();
+        $cb = new CategoriaBar();
         
-        $cbs->name = $request->input('name');
-        $cbs->descricao = $request->input('descricao');
-        $cbs->save();
+        $cb->name = $request->input('name');
+        $cb->descricao = $request->input('descricao');
+        $cb->save();
         return view('categoria_bar.create');
     }
 
@@ -49,9 +49,9 @@ class CategoriaBarController extends Controller
      */
     public function show(string $id)
     {
-        $cbs = CategoriaBar::findOrFail($id);
+        $cb = CategoriaBar::findOrFail($id);
         return view("categoria_bar.show", [
-            "categoria_bar"=> $cbs
+            "categoria_bar"=> $cb
         ]);
     }
 
@@ -60,7 +60,7 @@ class CategoriaBarController extends Controller
      */
     public function edit(string $id)
     {
-        $cbs = CategoriaPost::findOrFail($id);
+        $cbs = CategoriaBar::findOrFail($id);
         return view("categoria_bar.edit", [
             "categoria_bar"=> $cbs
         ]);
@@ -76,11 +76,11 @@ class CategoriaBarController extends Controller
             'descricao' =>'required'
         ]);
 
-        $cbs = CategoriaBar::findOrFail($id);
+        $cb = CategoriaBar::findOrFail($id);
         
-        $cbs->name = $request->input('name');
-        $cbs->descricao = $request->input('descricao');
-        $cbs->update();
+        $cb->name = $request->input('name');
+        $cb->descricao = $request->input('descricao');
+        $cb->update();
         return view('categoria_bar.index');
     }
 
