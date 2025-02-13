@@ -3,35 +3,40 @@
 Comando: git clone https://github.com/Eruzhar/Projeto_Integrador_Laravel.git
 Descrição:
 
+--comandos github para atualizar o repositorio baixado.
+
+Comando: git pull origin master
+Descrição: Baixa e mescla alterações do repositório remoto para o repositório local. 
+
 
 --comandos github para subir o projeto
 
 Comando: git add .
-Descrição:
+Descrição: Adiciona alterações feitas em arquivos para o próximo commit no Git.
 
-Comando: git commit -m "comentário para faacilitar o entendimento do commit"
-Descrição:
+Comando: git commit -m "comentário para facilitar o entendimento do commit"
+Descrição: Leva as mudanças de um ambiente local para o repositório no git, permitindo ainda a inserção de uma mensagem descritiva
 
 Comando: git push origin master
-Descrição:
+Descrição: Envia as alterações feitas no branch master local para o branch master remoto.
 
 
 
 --comandos do terminal para fazer o projeto funcionar 
 
 Comando: composer install
-Descrição:
+Descrição: Lê o arquivo composer.json do diretório atual, resolve as dependências e as instala no vendor. 
 
 Comando: npm install
-Descrição:
+Descrição: É usado para instalar pacotes e bibliotecas JavaScript em projetos Node.js
 
 Comando: php artisan migrate
-Descrição:
+Descrição: Publica o esquema no banco de dados e gera uma tabela. 
 
 Comando: php artisan serve
-Descrição:
+Descrição: Inicia um servidor de desenvolvimento embutido no Laravel
 
 Comando: php artisan key:generate
-Descrição:
+Descrição: Gera uma nova chave de aplicativo para o Laravel.
 
 
