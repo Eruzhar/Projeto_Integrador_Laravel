@@ -12,8 +12,8 @@ class CotacaoController extends Controller
      */
     public function index()
     {
-        $cotacoes = Cotacao::with()->get();
-        return view("",[
+        $cotacoes = Cotacao::with(["categoria_status","categoria_bar","categoria_Evento"])->get();
+        return view("cotacao.index",[
             "cotacoes"=> $cotacoes
         ]);
     }
@@ -38,9 +38,9 @@ class CotacaoController extends Controller
             "email"=>"requered",
             "localidade"=> "requered",
             "observacoes"=>"required",
-            "status_cotacao_id"=> "required|exists:,id",
-            "categoria_bar_id"=> "required|exists:,id",
-            "categoria_evento_id"=> "required|exists:,id"
+            "status_cotacao_id"=> "required|exists:status_cotacao,id",
+            "categoria_bar_id"=> "required|exists:categoria_bar,id",
+            "categoria_evento_id"=> "required|exists:categoria_evento,id"
             ]);
 
         $cotacao = new Cotacao();

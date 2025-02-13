@@ -6,12 +6,8 @@
         <section class="drink-section">
             <h1>Drinks</h1>
             <div class="drink-grid">
-                <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>
-                <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>
-                <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>
-                <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>
-                <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>
-                <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>                
+                <x-drink_card></x-drink_card>
+                {{-- <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>  --}}
             </div>
         </section>
         <section class="bar-section">
