@@ -19,10 +19,10 @@ Route::get('/galeria',function (){
 });
 
 Route::resource('curriculo', CurriculoController::class);
-Route::resource('curriculo', CategoriaBarController::class);
-Route::resource('curriculo', CategoriaEventoController::class);
-Route::resource('curriculo', CategoriaPostController::class);
-Route::resource('curriculo', CotacaoController::class);
-Route::resource('curriculo', StatusCotacaoController::class);
-Route::resource('curriculo', ProfissaoController::class);
-Route::resource('curriculo', PostController::class);
+Route::resource('categoriabar', CategoriaBarController::class);
+Route::resource('categoriaevento', CategoriaEventoController::class);
+Route::resource('categoriapost', CategoriaPostController::class);
+Route::resource('cotacao', CotacaoController::class);
+Route::resource('statuscotacao', StatusCotacaoController::class);
+Route::resource('profissao', ProfissaoController::class);
+Route::resource('post', PostController::class);
