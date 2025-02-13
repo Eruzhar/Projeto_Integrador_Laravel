@@ -17,28 +17,21 @@
                     Vaga
                     </button>
                     <ul class="dropdown-menu">
-                        {{-- <li><a href="#" id="1" class="dropdown-item">Bartender</a></li>
-                        <li><a href="#" id="2" class="dropdown-item">Backbar</a></li>
-                        <li><a href="#" id="3" class="dropdown-item">Copeira</a></li>
-                        <li><a href="#" id="4" class="dropdown-item">Garçom</a></li>
-                         --}}
-                         
                         @foreach($profissoes as $profissao)
-                        {{ dd($profissao) }}
-                        <li><a class="dropdown-item" id="{{$profissao->id}}" href="#">{{ $profissao->nome }}</a></li>
+                        <li><a class="dropdown-item" id="{{$profissao->id}}" href="#">{{$profissao->name}}</a></li>
                         @endforeach                        
                     </ul>
                 </div>
                 <div class="mb-3 curriculo">
                     <label for="formFile" class="form-label">Currículo</label>
-                    <input class="form-control" type="file" id="formFile" nome="curriculo">
+                    <input class="form-control" type="file" id="formFile" name="arquivo">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" cols="100"
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" cols="100" name="informacoes"
                      placeholder="Fale mais um pouco sobre suas experiências com bar"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg botao-custom" id="form-button" href="#" role="button">Enviar</button>
+                <button type="submit" class="btn btn-primary btn-lg botao-custom" id="form-button">Enviar</button>
            </form>
         </section>
     </main>
