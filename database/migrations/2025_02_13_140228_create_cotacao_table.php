@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('localidade');
             $table->integer('qtd_convidados'); 
             $table->text('observacoes');
-            $table->foreignId('status_cotacao_id')->constrained('categoria_evento')->onDelete('cascade');
+            $table->foreignId('status_cotacao_id')->constrained('status_cotacao')->onDelete('cascade');
             $table->foreignId('categoria_bar_id')->constrained('categoria_bar')->onDelete('cascade');
-            $table->foreignId('categoria_evento_id')->constrained('status_cotacao')->onDelete('cascade');
+            $table->foreignId('categoria_evento_id')->constrained('categoria_evento')->onDelete('cascade');
             $table->timestamps();
         });
     }
