@@ -6,22 +6,19 @@
             <h1>Trabalhe Conosco</h1>
         </section>
         <section  class="formulario-container">
-           <form action="" class="formulario" method="post">
+           <form action="" class="formulario" method="post" id="my_form">
+                @csrf
                 <div class="formName">
                     <label for="nome" class="form-label">Nome Completo</label>
                     <input type="text" class="form-control" name="nome" id="nome" aria-describedby="nomeHelp">
                     <!--<div id="nomeHelp" class="form-text">Nome completo.</div>-->
                 </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Vaga
-                    </button>
-                    <ul class="dropdown-menu">
-                        @foreach($profissoes as $profissao)
-                        <li><a class="dropdown-item" id="{{$profissao->id}}" href="#">{{$profissao->name}}</a></li>
-                        @endforeach                        
-                    </ul>
-                </div>
+                <select name="profissao_id" id="" class="form-select">
+                    <option value="">Selecione a vaga</option>
+                    @foreach($profissoes as $profissao)
+                    <option value="{{$profissao->id}}" href="#">{{$profissao->name}}</></option>
+                    @endforeach                     
+                </select>                
                 <div class="mb-3 curriculo">
                     <label for="formFile" class="form-label">Currículo</label>
                     <input class="form-control" type="file" id="formFile" name="arquivo">
