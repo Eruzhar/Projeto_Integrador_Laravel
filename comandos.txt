@@ -1,0 +1,37 @@
+--comando github para baixar o projeto
+
+Comando: git clone https://github.com/Eruzhar/Projeto_Integrador_Laravel.git
+Descrição:
+
+
+--comandos github para subir o projeto
+
+Comando: git add .
+Descrição:
+
+Comando: git commit -m "comentário para faacilitar o entendimento do commit"
+Descrição:
+
+Comando: git push origin master
+Descrição:
+
+
+
+--comandos do terminal para fazer o projeto funcionar 
+
+Comando: composer install
+Descrição:
+
+Comando: npm install
+Descrição:
+
+Comando: php artisan migrate
+Descrição:
+
+Comando: php artisan serve
+Descrição:
+
+Comando: php artisan key:generate
+Descrição:
+
+

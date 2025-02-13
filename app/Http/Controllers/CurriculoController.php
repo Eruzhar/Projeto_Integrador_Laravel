@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Curriculo;
 
 use Illuminate\Http\Request;
+use App\Models\Curriculo;
+use App\Models\Profissao;
 
 class CurriculoController extends Controller
 {
@@ -12,7 +13,11 @@ class CurriculoController extends Controller
      */
     public function index()
     {
-        return view('curriculo.index');
+        $curriculos = Curriculo::with('trabalho')->get();
+
+        return view('curriculo.index',[
+            'curriculos'=> $curriculos
+        ]);
     }
 
     /**
@@ -20,7 +25,12 @@ class CurriculoController extends Controller
      */
     public function create()
     {
-        //
+        //adicionado por Eric: a página de submissão precisa saber quais são as vagas disponiveis
+        $profissoes = Profissao::all();
+
+        return view('curriculo.create',[
+            'profissoes'=> $profissoes,
+        ]);
     }
 
     /**
@@ -28,7 +38,20 @@ class CurriculoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'nome'=> 'required',
+            'arquivo'=> 'required',
+            'informacoes'=> 'required',
+            'profissao_id'=> 'required|exists:trabalho,id'
+        ]);
+
+        $curriculo = new Curriculo();
+        $curriculo->nome = $request->input('nome');
+        $curriculo->arquivo = $request->input('arquivo');
+        $curriculo->informacoes = $request->input('informacoes');
+        $curriculo->profissao = $request->input('profissao_id');
+        $curriculo->save();
+        return redirect()->route('curriculo.create');
     }
 
     /**
@@ -36,7 +59,10 @@ class CurriculoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $curriculo = Curriculo::findOrFail($id);
+        return view('curriculo.show',[
+            'curriculo'=> $curriculo
+            ]);
     }
 
     /**
@@ -44,7 +70,10 @@ class CurriculoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $curriculo = Curriculo::findOrFail($id);
+        return view('curriculo.edit',[
+            'curriculo'=> $curriculo
+            ]);
     }
 
     /**
@@ -52,7 +81,20 @@ class CurriculoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        request()->validate([
+            'nome'=> 'required',
+            'arquivo'=> 'required',
+            'informacoes'=> 'required',
+            'profissao_id'=> 'required|exists:trabalho,id'
+        ]);
+
+        $curriculo = Curriculo::findOrFail($id);
+        $curriculo->nome = $request->input('nome');
+        $curriculo->arquivo = $request->input('arquivo');
+        $curriculo->informacoes = $request->input('informacoes');
+        $curriculo->profissao = $request->input('profissao_id');
+        $curriculo->update();
+        return redirect()->route('curriculo.index');
     }
 
     /**
@@ -60,6 +102,8 @@ class CurriculoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $curriculo = Curriculo::findOrFail($id);
+        $curriculo->delete();
+        return redirect()->route("curriculo.index"); 
     }
 }

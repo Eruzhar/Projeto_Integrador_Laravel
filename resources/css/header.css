@@ -2,18 +2,19 @@
     box-sizing: border-box;
     padding: 0%;
     margin: 0%;    
-
 }
 :root{
     --main-color: black;
     --second-color: orange;
     --text-color: white;
 }
+/*
 body {
     font-family: 'Inter Variable', sans-serif;
     background-color: var(--main-color);
     color: var(--text-color);
 }
+*/
 header{
     display: flex;    
     justify-content: space-between;   
@@ -57,50 +58,4 @@ h1 {
     color: #c7c7c7;
     text-decoration: none;
     margin: 0 0.5rem 0 0.5rem;
-}
-.chamada{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 10px;        
-    border-radius: 10px;
-    cursor: pointer;    
-    background-image: url("../../public/img/blurrdrinks.png"); 
-    & h1{
-        color: var(--text-color);
-        font-weight: 1000;
-        padding: 100px 0;
-        font-family:'Lilita One', monospace;
-    }
-}
-.formulario-container{
-    display: flex;
-    justify-content: center;
-    align-content: center;   
-    padding: 20px 0;
-}
-form{
-    display: flex;
-    flex-direction: column;    
-    gap: 20px;    
-    /*border: 1px solid white;*/
-    &:last-child{
-        align-items: center;
-    }    
-}
-.formName{
-    align-self: flex-start;    
-}
-.form-label{
-    color: var(--second-color);    
-}
-.dropdown{
-    align-self: flex-start;
-    & button{
-        background-color: var(--second-color) !important;
-        border: none;
-    }    
-}
-.curriculo{
-    align-self: flex-start;    
 }

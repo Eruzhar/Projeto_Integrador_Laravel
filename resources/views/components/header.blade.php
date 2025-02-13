@@ -1,4 +1,5 @@
-<header class="d-flex justify-content-between">    
+<header class="d-flex justify-content-between">
+    @vite(['resources/css/header.css'])
         <a href=""><img src="{{ asset('img/logo.png') }}" alt="" class="logo"></a>
         <ul>
             <li><a href="#" class="header-link">Cardápio</a></li>

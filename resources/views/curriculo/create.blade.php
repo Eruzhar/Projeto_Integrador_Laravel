@@ -1,5 +1,5 @@
 <x-layout title="Trabalhe conosco">
-    @vite(['resources/css/curriculo.index.css'])
+    @vite(['resources/css/curriculo.create.css'])
     <x-header></x-header>
     <main>
         <section class="chamada">
@@ -9,7 +9,7 @@
            <form action="" class="formulario" method="post">
                 <div class="formName">
                     <label for="nome" class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" id="nome" aria-describedby="nomeHelp">
+                    <input type="text" class="form-control" name="nome" id="nome" aria-describedby="nomeHelp">
                     <!--<div id="nomeHelp" class="form-text">Nome completo.</div>-->
                 </div>
                 <div class="dropdown">
@@ -17,12 +17,16 @@
                     Vaga
                     </button>
                     <ul class="dropdown-menu">
-                    {{--@foreach($vagas as $vaga)--}}
-                    <li><a class="dropdown-item" id="opt1" href="#">Bartender</a></li>
-                    <li><a class="dropdown-item" id="opt2" href="#">Backbar</a></li>
-                    <li><a class="dropdown-item" id="opt3" href="#">Copeira</a></li>
-                    <li><a class="dropdown-item" id="opt4" href="#">Garçom</a></li>
-                    {{--@endforeach--}}
+                        {{-- <li><a href="#" id="1" class="dropdown-item">Bartender</a></li>
+                        <li><a href="#" id="2" class="dropdown-item">Backbar</a></li>
+                        <li><a href="#" id="3" class="dropdown-item">Copeira</a></li>
+                        <li><a href="#" id="4" class="dropdown-item">Garçom</a></li>
+                         --}}
+                         
+                        @foreach($profissoes as $profissao)
+                        {{ dd($profissao) }}
+                        <li><a class="dropdown-item" id="{{$profissao->id}}" href="#">{{ $profissao->nome }}</a></li>
+                        @endforeach                        
                     </ul>
                 </div>
                 <div class="mb-3 curriculo">
