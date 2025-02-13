@@ -41,7 +41,7 @@ class CategoriaPostController extends Controller
         $cps->name = $request->input('name');
         $cps->descricao = $request->input('descricao');
         $cps->save();
-        return redirect()->route('categoria_post.create');
+        return view('categoria_post.create');
     }
 
     /**
@@ -81,7 +81,7 @@ class CategoriaPostController extends Controller
         $cps->name = $request->input('name');
         $cps->descricao = $request->input('descricao');
         $cps->update();
-        return redirect()->route('categoria_post.index');
+        return view('categoria_post.index');
     }
 
     /**

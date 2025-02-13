@@ -48,7 +48,7 @@ class PostController extends Controller
         $post->arquivo = $request->input('arquivo');
         $post->categoria_id = $request->input('categoria_id');
         $post->save();
-        return redirect()->route("post.create");
+        return view("post.create");
     }
 
     /**
@@ -94,7 +94,7 @@ class PostController extends Controller
         $post->arquivo = $request->input('arquivo');
         $post->categoria_id = $request->input('categoria_id');
         $post->update();
-        return redirect()->route('post.index');
+        return view('post.index');
     }
 
     /**
@@ -104,6 +104,6 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->delete();
-        return redirect()->route("post.index"); 
+        return view("post.index"); 
     }
 }
