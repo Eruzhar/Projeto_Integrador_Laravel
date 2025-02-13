@@ -32,14 +32,12 @@ class CategoriaPostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'tipo' =>'required',
             'name' =>'required',
             'descricao' =>'required'
         ]);
 
         $cps = new CategoriaPost();
         
-        $cps->tipo = $request->input('tipo');
         $cps->name = $request->input('name');
         $cps->descricao = $request->input('descricao');
         $cps->save();
@@ -74,14 +72,12 @@ class CategoriaPostController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'tipo' =>'required',
             'name' =>'required',
             'descricao' =>'required'
         ]);
 
         $cps = CategoriaPost::findOrFail($id);
         
-        $cps->tipo = $request->input('tipo');
         $cps->name = $request->input('name');
         $cps->descricao = $request->input('descricao');
         $cps->update();
