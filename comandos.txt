@@ -1,12 +1,21 @@
 --comando github para baixar o projeto
 
 Comando: git clone https://github.com/Eruzhar/Projeto_Integrador_Laravel.git
-Descrição:
+Descrição: Copia um repositório Git existente para um novo diretório no computador local.
+
 
 --comandos github para atualizar o repositorio baixado.
 
 Comando: git pull origin master
 Descrição: Baixa e mescla alterações do repositório remoto para o repositório local. 
+
+
+
+--comandos github para remover arquivos do projetos
+
+comando: git rm
+Descrição: Remove arquivos de um repositório Git. Ele pode remover arquivos individuais ou uma coleção de arquivos. 
+
 
 
 --comandos github para subir o projeto
@@ -22,7 +31,7 @@ Descrição: Envia as alterações feitas no branch master local para o branch m
 
 
 
---comandos do terminal para fazer o projeto funcionar 
+--comandos de PHP para fazer o projeto funcionar 
 
 Comando: composer install
 Descrição: Lê o arquivo composer.json do diretório atual, resolve as dependências e as instala no vendor. 
