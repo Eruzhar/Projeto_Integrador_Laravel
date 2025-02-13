@@ -27,67 +27,67 @@ class DatabaseSeeder extends Seeder
         ]);*/
 
         Profissao::factory()->create([
-            'name'=> 'Bartender',
+            'nome'=> 'Bartender',
             'descricao' => 'BartenderDesc',
         ]);        
         Profissao::factory()->create([
-            'name'=> 'Backbar',
+            'nome'=> 'Backbar',
             'descricao' => 'BackbarDesc',
         ]);
         Profissao::factory()->create([
-            'name'=> 'Copeira',
+            'nome'=> 'Copeira',
             'descricao' => 'CopeiraDesc',
         ]);
         Profissao::factory()->create([
-            'name'=> 'Garçom',
+            'nome'=> 'Garçom',
             'descricao' => 'GarçomDesc',
         ]);
         StatusCotacao::factory()->create([
-            'name'=> 'Novo',
+            'nome'=> 'Novo',
             'descricao' => 'NovoDesc',
         ]);
         StatusCotacao::factory()->create([
-            'name'=> 'Pendente',
+            'nome'=> 'Pendente',
             'descricao' => 'PendenteDesc',
         ]);
         StatusCotacao::factory()->create([
-            'name'=> 'Concluído',
+            'nome'=> 'Concluído',
             'descricao' => 'ConcluídoDesc',
         ]);
         CategoriaBar::factory()->create([
-            'name'=> 'Bar 1',
+            'nome'=> 'Bar 1',
             'descricao' => 'Bar 1Desc',
         ]);
         CategoriaBar::factory()->create([
-            'name'=> 'Bar 2',
+            'nome'=> 'Bar 2',
             'descricao' => 'Bar 2Desc',
         ]);
         CategoriaBar::factory()->create([
-            'name'=> 'Bar 3',
+            'nome'=> 'Bar 3',
             'descricao' => 'Bar 3Desc',
         ]);
         CategoriaPost::factory()->create([
-            'name'=> 'Bar',
+            'nome'=> 'Bar',
             'descricao' => 'BarDesc',
         ]);
         CategoriaPost::factory()->create([
-            'name'=> 'Drink',
+            'nome'=> 'Drink',
             'descricao' => 'DrinkDesc',
         ]);
         CategoriaPost::factory()->create([
-            'name'=> 'Evento',
+            'nome'=> 'Evento',
             'descricao' => 'EventoDesc',
         ]);
         CategoriaEvento::factory()->create([
-            'name'=> 'Evento 1',
+            'nome'=> 'Evento 1',
             'descricao' => 'Evento 1Desc',
         ]);
         CategoriaEvento::factory()->create([
-            'name'=> 'Evento 2',
+            'nome'=> 'Evento 2',
             'descricao' => 'Evento 2Desc',
         ]);
         CategoriaEvento::factory()->create([
-            'name'=> 'Evento 3',
+            'nome'=> 'Evento 3',
             'descricao' => 'Evento 3Desc',
         ]);
 
