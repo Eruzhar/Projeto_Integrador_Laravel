@@ -51,7 +51,7 @@ class CurriculoController extends Controller
         $curriculo->informacoes = $request->input('informacoes');
         $curriculo->profissao = $request->input('profissao_id');
         $curriculo->save();
-        return redirect()->route('curriculo.create');
+        return view('curriculo.create');
     }
 
     /**
@@ -94,7 +94,7 @@ class CurriculoController extends Controller
         $curriculo->informacoes = $request->input('informacoes');
         $curriculo->profissao = $request->input('profissao_id');
         $curriculo->update();
-        return redirect()->route('curriculo.index');
+        return view('curriculo.index');
     }
 
     /**
@@ -104,6 +104,6 @@ class CurriculoController extends Controller
     {
         $curriculo = Curriculo::findOrFail($id);
         $curriculo->delete();
-        return redirect()->route("curriculo.index"); 
+        return view("curriculo.index"); 
     }
 }

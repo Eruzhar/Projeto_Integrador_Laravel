@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Profissao;
 
 class ProfissaoController extends Controller
 {
@@ -11,7 +12,10 @@ class ProfissaoController extends Controller
      */
     public function index()
     {
-        //
+        $profissoes = Profissao::all();
+        return view('profissao.index',[
+            'profissoes'=> $profissoes
+        ]);
     }
 
     /**
@@ -19,7 +23,7 @@ class ProfissaoController extends Controller
      */
     public function create()
     {
-        //
+        return view('profissao.create');
     }
 
     /**
@@ -27,7 +31,18 @@ class ProfissaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'nome'=> 'required',
+            'descricao'=> 'required'
+            ]);
+
+        $profissao = new Profissao();
+
+        $profissao->nome = $request->input('nome');
+        $profissao->descricao = $request->input('descricao');
+        $profissao->save();
+
+        return view('profissao.create');
     }
 
     /**
@@ -35,7 +50,10 @@ class ProfissaoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $profisoes = Profissao::findOrFail($id);
+        return view('profissao.show',[
+            'profissoes'=> $profisoes
+            ]);
     }
 
     /**
@@ -43,7 +61,10 @@ class ProfissaoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $profisoes = Profissao::findOrFail($id);
+        return view('profissao.edit',[
+            'profissoes'=> $profisoes
+            ]);
     }
 
     /**
@@ -51,7 +72,18 @@ class ProfissaoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        request()->validate([
+            'nome'=> 'required',
+            'descricao'=> 'required'
+            ]);
+
+        $profissao = Profissao::findOrFail($id);
+
+        $profissao->nome = $request->input('nome');
+        $profissao->descricao = $request->input('descricao');
+        $profissao->update();
+        
+        return view('profissao.create');
     }
 
     /**
@@ -59,6 +91,8 @@ class ProfissaoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $profissao = Profissao::findOrFail($id);
+        $profissao->delete();
+        return view('profissao.index');
     }
 }
