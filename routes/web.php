@@ -27,19 +27,19 @@ Route::resource('statuscotacao', StatusCotacaoController::class);
 Route::resource('profissao', ProfissaoController::class);
 Route::resource('post', PostController::class);
 
-Route::get('/galeriaDashboard',function (){
-    return view('galeriaDashboard');
-})->name('galeriaDashboard');
-
-Route::get('/galerianew',function (){
-    return view('adcionarItensGaleria');
-})->name('galeriaNovo');
-
 Route::get('/dashboard',function (){
     return view('menuDashboard');
 })->name('menu');
 
-Route::get('/login',function (){
+Route::get('/dashboard/galeria',function (){
+    return view('galeriaDashboard');
+})->name('galeriaDashboard');
+
+Route::get('/dashboard/galeria/novo',function (){
+    return view('adcionarItensGaleria');
+})->name('galeriaNovo');
+
+Route::get('/dashboard/login',function (){
     return view('login');
 })->name('login');
 
