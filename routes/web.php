@@ -29,25 +29,28 @@ Route::resource('post', PostController::class);
 
 Route::get('/galeriaDashboard',function (){
     return view('galeriaDashboard');
-});
+})->name('galeriaDashboard');
+
 Route::get('/galerianew',function (){
     return view('adcionarItensGaleria');
-});
+})->name('galeriaNovo');
+
 Route::get('/dashboard',function (){
     return view('menuDashboard');
-});
+})->name('menu');
+
 Route::get('/login',function (){
     return view('login');
-});
-Route::get('/dashboard/orcamento/novo',function (){
-    return view('orcamento,index.novo');
-});
+})->name('login');
+
 Route::get('/dashboard/orcamento/novo',function (){
     return view('orcamento.index.novo');
-});
+})->name('orcamentosNovos');
+
 Route::get('/dashboard/orcamento/pendente',function (){
     return view('orcamento.index.pendente');
-});
+})->name('orcamentosPendentes');
+
 Route::get('/dashboard/orcamento/concluidos',function (){
     return view('orcamento.index.concluidos');
-});
+})->name('orcamentosConcluidos');
