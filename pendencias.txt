@@ -7,6 +7,10 @@ Lista de pendencias
             codigo html
         </x-layout-dashboard>
 
-        arquivos:
+        arquivos de view:
 
-        curriculo.
+        curriculo.index
+        os 3 orcamentos
+        adcionarItensGaleria
+        login
+        menuDashboard
