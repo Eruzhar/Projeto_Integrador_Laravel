@@ -1,5 +1,5 @@
 <x-layout-dashboard title="Dashboard Galeria" css="resources/css/Dahsboard-Galeria.css">
-    <x-header></x-header>
+<x-header></x-header>
     <section>
         <div class="Cabeçalho">
             <h1>Dahsboard-Galeria</h1>
@@ -30,4 +30,4 @@
     <div class="DB">       
         </div>
     </section>
-</x-layout-dashboard><!DOCTYPE html>
+</x-layout-dashboard>
