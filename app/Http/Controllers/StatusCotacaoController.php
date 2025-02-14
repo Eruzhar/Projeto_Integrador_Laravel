@@ -13,7 +13,7 @@ class StatusCotacaoController extends Controller
     public function index()
     {
         $status = StatusCotacao::all();
-        return view('status_cotacao.index', [
+        return view('statuscotacao.index', [
            'status' => $status
         ]);
     }
@@ -23,7 +23,7 @@ class StatusCotacaoController extends Controller
      */
     public function create()
     {
-        return view('status_cotacao.create');
+        return view('statuscotacao.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class StatusCotacaoController extends Controller
         $status->descricao = $request->input('descricao');
         $status->save();
         
-        return view('status_cotacao.index');
+        return view('statuscotacao.index');
     }
 
     /**
@@ -51,7 +51,7 @@ class StatusCotacaoController extends Controller
     public function show(string $id)
     {
         $status = StatusCotacao::findOrFail($id);
-        return view('status.cotacao.show', [
+        return view('statuscotacao.show', [
             'status'=> $status
             ]);
     }
@@ -62,7 +62,7 @@ class StatusCotacaoController extends Controller
     public function edit(string $id)
     {
         $status = StatusCotacao::findOrFail($id);
-        return view('status_cotacao.edit', [
+        return view('statuscotacao.edit', [
            'status'=> $status
         ]);
     }
@@ -83,7 +83,7 @@ class StatusCotacaoController extends Controller
         $status->descricao = $request->input('descricao');
         $status->save();
         
-        return view('status_cotacao.index');
+        return view('statuscotacao.index');
     }
 
     /**
@@ -93,6 +93,6 @@ class StatusCotacaoController extends Controller
     {
         $status = StatusCotacao::findOrFail($id);
         $status->delete();
-        return view('status_cotacao.index');
+        return view('statuscotacao.index');
     }
 }

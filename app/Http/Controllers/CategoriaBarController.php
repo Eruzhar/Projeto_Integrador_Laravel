@@ -13,7 +13,7 @@ class CategoriaBarController extends Controller
     public function index()
     {
         $cbs= CategoriaBar::all();
-        return view("categoria_post.index", [
+        return view("categoriabar.index", [
             "categoria_posts" => $cbs
         ]);
     }
@@ -23,7 +23,7 @@ class CategoriaBarController extends Controller
      */
     public function create()
     {
-        return view("categoria_bar.create");
+        return view("categoriabar.create");
     }
 
     /**
@@ -41,7 +41,7 @@ class CategoriaBarController extends Controller
         $cbs->name = $request->input('name');
         $cbs->descricao = $request->input('descricao');
         $cbs->save();
-        return view('categoria_bar.create');
+        return view('categoriabar.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class CategoriaBarController extends Controller
     public function show(string $id)
     {
         $cbs = CategoriaBar::findOrFail($id);
-        return view("categoria_bar.show", [
+        return view("categoriabar.show", [
             "categoria_bar"=> $cbs
         ]);
     }
@@ -61,7 +61,7 @@ class CategoriaBarController extends Controller
     public function edit(string $id)
     {
         $cbs = CategoriaPost::findOrFail($id);
-        return view("categoria_bar.edit", [
+        return view("categoriabar.edit", [
             "categoria_bar"=> $cbs
         ]);
     }
@@ -81,7 +81,7 @@ class CategoriaBarController extends Controller
         $cbs->name = $request->input('name');
         $cbs->descricao = $request->input('descricao');
         $cbs->update();
-        return view('categoria_bar.index');
+        return view('categoriabar.index');
     }
 
     /**
@@ -91,6 +91,6 @@ class CategoriaBarController extends Controller
     {
         $cbs = CategoriaBar::findOrFail($id);
         $cbs->delete();
-        return view("categoria_bar.index");
+        return view("categoriabar.index");
     }
 }
