@@ -69,10 +69,23 @@ h1 {
     height: 60dvh;        
     background-image: url("../../public/img/homeBg1.png"); 
     background-size: cover;
+    position: relative;
     & h1{
         color: var(--text-color);
         font-weight: 1000;
         padding: 100px 0;
         font-family:'Lilita One', monospace;
+    }
+
+}
+.home-sub{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;        
+    /*border-radius: 10px;*/
+    & h1{
+        color: var(--text-color);
+        font-family:'Annie Use Your Telescope', monospace;
     }
 }
