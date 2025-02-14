@@ -14,7 +14,7 @@
         <h1>Dashboard Loja</h1>
         <section>
             <div>
-                <a href='Dahsboard-Galeria.html'><button type="button" class="btn btn-primary">Galeria</button></a>
+                <a href='{{route('galeriaDashboard')}}'><button type="button" class="btn btn-primary">Galeria</button></a>
                 <a href='Dahsboard-Cardapio.html'><button type="button" class="btn btn-primary">Cardapio</button></a>
             </div>
             <div>
