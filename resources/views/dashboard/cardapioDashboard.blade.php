@@ -3,17 +3,15 @@
 <x-header-dashboard></x-header-dashboard>
     <section>
         <div class="Cabeçalho">
+            <a href='{{route('menu')}}'>
+                <x-button-voltar descricao="Voltar">
+                </x-button-voltar>
+            </a>
             <h1>{{ $pageName }}</h1>
-            <div>
-                <a href='{{route('menu')}}'>
-                    <x-button-voltar descricao="Voltar">
-                    </x-button-voltar>
-                </a>
-                <a href='{{route('cardapioNovo')}}'>
-                    <x-button-novo descricao="Adicionar novo">
-                    </x-button-novo>
-                </a>                
-            </div>
+            <a href='{{route('cardapioNovo')}}'>
+                <x-button-novo descricao="Adicionar novo">
+                </x-button-novo>
+            </a>                
         </div>
     <div class="Filtro">
         <h4>Ordem:</h4>

@@ -3,17 +3,15 @@
 <x-header-dashboard></x-header-dashboard>
     <section>
         <div class="Cabeçalho">
-            <h1>{{ $pageName }}</h1>
-            <div>
-                <a href='{{route('menu')}}'>
-                    <x-button-voltar descricao="Voltar">
+            <a href='{{route('menu')}}'>
+                <x-button-voltar descricao="Voltar">
                     </x-button-voltar>
                 </a>
+                <h1>{{ $pageName }}</h1>
                 <a href='{{route('ambienteNovo')}}'>
                     <x-button-novo descricao="Adicionar novo">
                     </x-button-novo>
                 </a>                
-            </div>
         </div>
     <div class="Filtro">
         <h4>Ordem:</h4>
