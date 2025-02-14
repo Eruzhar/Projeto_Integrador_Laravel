@@ -1,6 +1,6 @@
 <x-layout-dashboard title="Novos Orçamentos"  css="resources/css/Orcamento.css">
 
-    <x-header></x-header>
+    <x-header-dashboard></x-header-dashboard>
         <div class="c">
 
     <div class="sidebar">

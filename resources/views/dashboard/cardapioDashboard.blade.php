@@ -1,4 +1,4 @@
-{{ $pageName = "Dashboard Galeria";}}
+{{ $pageName = "Dashboard Cardapio";}}
 <x-layout-dashboard title="{{ $pageName }}" css="resources/css/Dahsboard-Galeria.css">
 <x-header-dashboard></x-header-dashboard>
     <section>
@@ -9,7 +9,7 @@
                     <x-button-voltar descricao="Voltar">
                     </x-button-voltar>
                 </a>
-                <a href='{{route('galeriaNovo')}}'>
+                <a href='{{route('cardapioNovo')}}'>
                     <x-button-novo descricao="Adicionar novo">
                     </x-button-novo>
                 </a>                

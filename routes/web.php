@@ -35,9 +35,25 @@ Route::get('/dashboard/galeria',function (){
     return view('dashboard.galeriaDashboard');
 })->name('galeriaDashboard');
 
+Route::get('/dashboard/ambiente',function (){
+    return view('dashboard.ambienteDashboard');
+})->name('ambienteDashboard');
+
+Route::get('/dashboard/cardapio',function (){
+    return view('dashboard.cardapioDashboard');
+})->name('cardapioDashboard');
+
 Route::get('/dashboard/galeria/novo',function (){
     return view('dashboard.adcionarItensGaleria');
 })->name('galeriaNovo');
+
+Route::get('/dashboard/ambiente/novo',function (){
+    return view('dashboard.adcionarItensAmbiente');
+})->name('ambienteNovo');
+
+Route::get('/dashboard/cardapio/novo',function (){
+    return view('dashboard.adcionarItensCardapio');
+})->name('cardapioNovo');
 
 Route::get('/dashboard/login',function (){
     return view('dashboard.login');
