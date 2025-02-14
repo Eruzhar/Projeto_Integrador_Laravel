@@ -44,13 +44,13 @@ Route::get('/dashboard/login',function (){
 })->name('login');
 
 Route::get('/dashboard/orcamento/novo',function (){
-    return view('dashboard.orcamento.index.novo');
+    return view('dashboard.orcamentos.novo');
 })->name('orcamentosNovos');
 
 Route::get('/dashboard/orcamento/pendente',function (){
-    return view('dashboard.orcamento.index.pendente');
+    return view('dashboard.orcamentos.pendente');
 })->name('orcamentosPendentes');
 
 Route::get('/dashboard/orcamento/concluidos',function (){
-    return view('dashboard.orcamento.index.concluidos');
+    return view('dashboard.orcamentos.concluidos');
 })->name('orcamentosConcluidos');
