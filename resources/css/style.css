@@ -23,25 +23,25 @@ form{
 .Area-text{    
     & .form-Imagem{
        & .Imagem{
-            width: 820px;
+            width: 520px;
             height: 32px;
         }
     }
     & .form-Titulo{
         & .Titulo-Imagem{
-            width: 900px;
+            width: 600px;
             height: 32px;
         }    
     }
     & .form-Descrição{
         & .Descrição{
-            width: 900px;
-            height: 300px;
+            width: 600px;
+            height: 250px;
         }
     }
 }
 #ImagemUpLoad{
-    width: 800px;
-    height: 800px;
+    width: 500px;
+    height: 500px;
     object-fit: contain;
 }
