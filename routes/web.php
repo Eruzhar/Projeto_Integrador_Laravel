@@ -27,27 +27,30 @@ Route::resource('statuscotacao', StatusCotacaoController::class);
 Route::resource('profissao', ProfissaoController::class);
 Route::resource('post', PostController::class);
 
-Route::get('/galeriaDashboard',function (){
-    return view('galeriaDashboard');
-});
-Route::get('/galerianew',function (){
-    return view('adcionarItensGaleria');
-});
 Route::get('/dashboard',function (){
-    return view('menuDashboard');
-});
-Route::get('/login',function (){
-    return view('login');
-});
+    return view('dashboard.menuDashboard');
+})->name('menu');
+
+Route::get('/dashboard/galeria',function (){
+    return view('dashboard.galeriaDashboard');
+})->name('galeriaDashboard');
+
+Route::get('/dashboard/galeria/novo',function (){
+    return view('dashboard.adcionarItensGaleria');
+})->name('galeriaNovo');
+
+Route::get('/dashboard/login',function (){
+    return view('dashboard.login');
+})->name('login');
+
 Route::get('/dashboard/orcamento/novo',function (){
-    return view('orcamento,index.novo');
-});
-Route::get('/dashboard/orcamento/novo',function (){
-    return view('orcamento.index.novo');
-});
+    return view('dashboard.orcamentos.novo');
+})->name('orcamentosNovos');
+
 Route::get('/dashboard/orcamento/pendente',function (){
-    return view('orcamento.index.pendente');
-});
+    return view('dashboard.orcamentos.pendente');
+})->name('orcamentosPendentes');
+
 Route::get('/dashboard/orcamento/concluidos',function (){
-    return view('orcamento.index.concluidos');
-});
+    return view('dashboard.orcamentos.concluidos');
+})->name('orcamentosConcluidos');

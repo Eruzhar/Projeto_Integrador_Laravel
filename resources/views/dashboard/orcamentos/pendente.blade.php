@@ -1,3 +1,5 @@
+<x-layout-dashboard title="Orçamentos Pendentes"  css="resources/css/Orcamento.css">
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -14,7 +16,8 @@
     <x-header></x-header>
     <div class="c">
         <div class="sidebar">
-            <a href='Dashboard-Menu.html'><button type="button" class="btn btn-primary"
+            <a href='{{ route( 'menu') }}'>
+            <button type="button" class="btn btn-primary"
             data-bs-toggle="tooltip"
             data-bs-placement="top"
             data-bs-custom-class="custom-tooltip"
@@ -24,13 +27,13 @@
             </svg></button></a>
         <ul>
             <li>
-            <a href='Orcamento-Novos.html'>Novos</a>
+            <a href='{{ route( 'orcamentosNovos') }}'>Novos</a>
             </li>
             <li>
-            <a href='Orcamento-Pendentes.html'>Pendentes</a>
+            <a href='{{ route( 'orcamentosPendentes') }}'>Pendentes</a>
             </li>
             <li>
-            <a href='Orcamento-Concluidos.html'>Concluidos</a>
+            <a href='{{ route( 'orcamentosConcluidos') }}'>Concluidos</a>
             </li>
         </ul>
         </div>
@@ -46,14 +49,4 @@
         </section>
     </div>
 </div>
-  <footer></footer>
-  <script src="../JS/Buttons-Orcamento.js"></script>
-    <section class="Orcamentos-Antigos"></section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"    crossorigin="anonymous"    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script>
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-  </script>    
-</body>
-</html>
+</x-layout-dashboard>

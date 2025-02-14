@@ -1,0 +1,16 @@
+Lista de pendencias
+
+    Tiago
+
+        Atividade - Alteração das paginas criadas para o:
+        <x-layout-dashboard title="*nome da pagina*"  css="*endereço do css*">
+            codigo html
+        </x-layout-dashboard>
+
+        arquivos de view:
+
+        curriculo.index
+        os 3 orcamentos
+        adcionarItensGaleria
+        login
+        menuDashboard
