@@ -1,7 +1,5 @@
-<x-layout-dashboard title="Document"  css="resources/css/style.css">
-
-
-    <x-header></x-header>
+<x-layout-dashboard title="Login" css="resources/css/style.css">
+    <x-header-dashboard></x-header-dashboard>
     <section>
         <h1 class="text-center">Login</h1>
         <form>

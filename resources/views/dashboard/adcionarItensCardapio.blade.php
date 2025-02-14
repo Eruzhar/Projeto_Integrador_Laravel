@@ -33,7 +33,7 @@
             <x-button-limpar descricao="Limpar formulário">
             </x-button-limpar>
             <a
-            href='{{ route( 'galeriaDashboard') }}'>
+            href='{{ route( 'cardapioDashboard') }}'>
               <x-button-voltar descricao="Voltar">
               </x-button-voltar>
             </a>

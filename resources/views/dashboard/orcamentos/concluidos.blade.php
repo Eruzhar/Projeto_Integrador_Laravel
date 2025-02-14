@@ -1,5 +1,5 @@
 <x-layout-dashboard title="Orçamentos Concluídos"  css="resources/css/Orcamento.css">
-  <x-header></x-header>
+  <x-header-dashboard></x-header-dashboard>
   <div class="c">
     <div class="sidebar">
       <a href= '{{ route( 'menu') }}'>
@@ -37,4 +37,5 @@
       </section>
     </div>  
   </div>
+  @vite(['resources/js/Buttons-Orcamento.js'])
   </x-layout-dashboard>
