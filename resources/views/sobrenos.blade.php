@@ -1,3 +1,4 @@
-<div>
-    <!-- Simplicity is the essence of happiness. - Cedric Bledsoe -->
-</div>
+<x-layout title="Sobre Nós">
+    <x-header></x-header>
+    
+</x-layout>

@@ -16,6 +16,9 @@ body {
 }
 */
 header{
+    font-family: 'Inter Variable', sans-serif;
+    background-color: var(--main-color);
+    color: var(--text-color);
     display: flex;    
     justify-content: space-between;   
     fill: width(100%);     

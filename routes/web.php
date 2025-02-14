@@ -18,6 +18,10 @@ Route::get('/galeria',function (){
     return view('galeria');
 })->name('galeria');
 
+Route::get('/sobrenos',function (){
+    return view('sobrenos');
+})->name('sobrenos');
+
 Route::resource('curriculo', CurriculoController::class);
 Route::resource('categoriabar', CategoriaBarController::class);
 Route::resource('categoriaevento', CategoriaEventoController::class);
