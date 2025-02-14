@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;    
+
+}
+:root{
+    --main-color: black;
+    --second-color: orange;
+    --text-color: white;
+}
+body {
+    font-family: 'Inter Variable', sans-serif;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+.sn-main{    
+    flex-grow: 1;
+    justify-content: center;
+    align-content: start;
+    padding: 0 20dvw;        
+    /*border-radius: 10px;*/
+    height: 40dvh;        
+    position: relative;  
+}
+.sn-sub{
+    flex-grow: 1;
+    justify-content: center;
+    align-content: start;
+    padding: 0 20dvw;        
+    /*border-radius: 10px;*/
+    height: 50dvh;        
+    background-image: url("../../public/img/sobrenosBg.png"); 
+    background-size: cover;    
+}
+.sn-h1{
+    font-size: 2.5rem;
+    color: var(--text-color);   
+    padding: 0 !important;
+}
