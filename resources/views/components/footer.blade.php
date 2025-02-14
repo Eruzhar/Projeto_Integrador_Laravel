@@ -7,7 +7,7 @@
         <p class="footer-item"><a href="" class="footer-link c3">Termos e condições</a></p>
         <p class="footer-item"><a href="" class="footer-link c3">Política de Cookies</a></p>        
         <div class="vr c4"></div>
-        <p class="footer-item"><a href="" class="footer-link c5">Sobre nós</a></p>
+        <p class="footer-item"><a href="{{ route('sobrenos') }}" class="footer-link c5">Sobre nós</a></p>
         <p class="footer-item"><a href="" class="footer-link c5">Perguntas Frequentes</a></p>
     </div>
     
