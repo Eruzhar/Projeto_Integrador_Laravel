@@ -85,7 +85,7 @@ const json = [
         "indice":2,
         "titulo":"titulo",
         "descricao":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium cum, esse tenetur voluptates illo possimus in! Deserunt ex nisi voluptatem veniam sequi laborum illo perferendis beatae tenetur rerum! Nisi, enim?",
-        "img": "../Imagens/istockphoto-1147544807-1024x1024.jpg"
+        "img": "img/istockphoto-1147544807-1024x1024.jpg"
     },
     {
         "indice":3,

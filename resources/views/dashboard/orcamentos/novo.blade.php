@@ -38,4 +38,6 @@
     </section>
     </div>
 </div>
+@vite(['resources/js/Buttons-Orcamento.js'])
+
 </x-layout-dashboard>

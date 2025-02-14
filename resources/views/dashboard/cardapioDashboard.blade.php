@@ -31,4 +31,5 @@
     <div class="DB">       
         </div>
     </section>
+    @vite(['resources/js/Buttons-Dashbords.js'])
 </x-layout-dashboard>
