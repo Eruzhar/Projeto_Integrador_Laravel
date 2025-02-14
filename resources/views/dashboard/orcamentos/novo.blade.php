@@ -1,4 +1,4 @@
-<x-layout-dashboard title="Novos Orçamentos"  css="resources/css/Orcamento.css">
+<x-layout-dashboard title="Novos Orçamentos"  css="resources/css/dashboard/Orcamento.css">
 
     <x-header-dashboard></x-header-dashboard>
         <div class="c">

@@ -1,4 +1,4 @@
-<x-layout-dashboard title="Curriculos"  css="resources/css/Orcamento.css">
+<x-layout-dashboard title="Curriculos"  css="resources/css/dashboard/Orcamento.css">
 
 
     <x-header-dashboard></x-header-dashboard>

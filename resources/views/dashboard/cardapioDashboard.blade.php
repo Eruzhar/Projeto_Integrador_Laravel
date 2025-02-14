@@ -1,5 +1,5 @@
-{{ $pageName = "Dashboard Cardapio";}}
-<x-layout-dashboard title="{{ $pageName }}" css="resources/css/Dahsboard-Galeria.css">
+{{$pageName = "Dashboard Cardapio"}}
+<x-layout-dashboard title="{{ $pageName}}" css="resources/css/dashboard/Dahsboard-Galeria.css">
 <x-header-dashboard></x-header-dashboard>
     <section>
         <div class="Cabeçalho">

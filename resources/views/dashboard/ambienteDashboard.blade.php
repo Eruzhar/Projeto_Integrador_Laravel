@@ -1,5 +1,5 @@
 {{ $pageName = "Dashboard Ambiente";}}
-<x-layout-dashboard title="{{ $pageName }}" css="resources/css/Dahsboard-Galeria.css">
+<x-layout-dashboard title="{{ $pageName }}" css="resources/css/dashboard/Dahsboard-Galeria.css">
 <x-header-dashboard></x-header-dashboard>
     <section>
         <div class="Cabeçalho">

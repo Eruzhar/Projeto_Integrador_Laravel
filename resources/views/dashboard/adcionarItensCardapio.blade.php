@@ -1,4 +1,4 @@
-<x-layout-dashboard title="Up Load"  css="resources/css/style.css">
+<x-layout-dashboard title="Up Load"  css="resources/css/dashboard/style.css">
 
     <x-header-dashboard></x-header-dashboard>
   <form>

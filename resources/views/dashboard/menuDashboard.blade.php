@@ -1,4 +1,4 @@
-<x-layout-dashboard title="Dashboard - Menu"  css="resources/css/Dashboard-Menu.css">
+<x-layout-dashboard title="Dashboard - Menu"  css="resources/css/dashboard/Dashboard-Menu.css">
 
     <x-header-dashboard></x-header-dashboard>
     <div class="Menu">
