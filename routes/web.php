@@ -26,3 +26,28 @@ Route::resource('cotacao', CotacaoController::class);
 Route::resource('statuscotacao', StatusCotacaoController::class);
 Route::resource('profissao', ProfissaoController::class);
 Route::resource('post', PostController::class);
+
+Route::get('/galeriaDashboard',function (){
+    return view('galeriaDashboard');
+});
+Route::get('/galerianew',function (){
+    return view('adcionarItensGaleria');
+});
+Route::get('/dashboard',function (){
+    return view('menuDashboard');
+});
+Route::get('/login',function (){
+    return view('login');
+});
+Route::get('/dashboard/orcamento/novo',function (){
+    return view('orcamento,index.novo');
+});
+Route::get('/dashboard/orcamento/novo',function (){
+    return view('orcamento.index.novo');
+});
+Route::get('/dashboard/orcamento/pendente',function (){
+    return view('orcamento.index.pendente');
+});
+Route::get('/dashboard/orcamento/concluidos',function (){
+    return view('orcamento.index.concluidos');
+});
