@@ -3,6 +3,10 @@ Lista de pendencias
     Tiago
 
         Atividade - Alteração das paginas criadas para o:
-        <x-layout-dashboard title="*nome da pagina*">
+        <x-layout-dashboard title="*nome da pagina*"  css="*endereço do css*">
             codigo html
         </x-layout-dashboard>
+
+        arquivos:
+
+        curriculo.
