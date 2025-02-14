@@ -6,14 +6,14 @@
         <section>
             <div>
                 <a href='{{route('galeriaDashboard')}}'><button type="button" class="btn btn-primary">Galeria</button></a>
-                <a href='Dahsboard-Cardapio.html'><button type="button" class="btn btn-primary">Cardapio</button></a>
+                <a href='{{route('galeriaDashboard')}}'><button type="button" class="btn btn-primary">Cardapio</button></a>
             </div>
             <div>
-                <a href='Dahsboard-Ambiente.html'><button type="button" class="btn btn-primary">Ambiente</button></a>
-                <a href='Orcamento-Concluidos.html'><button type="button" class="btn btn-primary">Orçamentos</button></a>
+                <a href='{{route('galeriaDashboard')}}'><button type="button" class="btn btn-primary">Ambiente</button></a>
+                <a href='{{route('orcamentosNovos')}}'><button type="button" class="btn btn-primary">Orçamentos</button></a>
             </div>
             <div>
-                <a href='Curriculos.html'><button id="ultimo" type="button" class="btn btn-primary">Curriculos</button></a>
+            <a href={{ route ('curriculo.index')}}><button id="ultimo" type="button" class="btn btn-primary">Curriculos</button></a>
             </div>
         </section>
     </div>

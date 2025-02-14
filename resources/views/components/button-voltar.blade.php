@@ -5,6 +5,7 @@
     data-bs-placement="top"
     data-bs-custom-class="custom-tooltip"
     data-bs-title="{{ $descricao }}"
+    type="button"
     >
     <svg
         xmlns="http://www.w3.org/2000/svg"

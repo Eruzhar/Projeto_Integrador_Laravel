@@ -4,7 +4,8 @@
     <x-header></x-header>
     <div class="c">
         <div class="sidebar">
-            <a href='Dashboard-Menu.html'><button type="button" class="btn btn-primary"
+            <a href='{{ route( 'menu') }}'>
+                <button type="button" class="btn btn-primary"
                 data-bs-toggle="tooltip"
             data-bs-placement="top"
         data-bs-custom-class="custom-tooltip"

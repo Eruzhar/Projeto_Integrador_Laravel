@@ -4,7 +4,8 @@
         <div class="c">
 
     <div class="sidebar">
-        <a href='Dashboard-Menu.html'><button type="button" class="btn btn-primary"
+        <a href='{{ route( 'menu') }}'>
+          <button type="button" class="btn btn-primary"
           data-bs-toggle="tooltip"
           data-bs-placement="top"
           data-bs-custom-class="custom-tooltip"
@@ -14,13 +15,13 @@
         </svg></button></a>
       <ul>
         <li>
-          <a href='Orcamento-Novos.html'>Novos</a>
+          <a href='{{ route( 'orcamentosNovos') }}'>Novos</a>
         </li>
         <li>
-          <a href='Orcamento-Pendentes.html'>Pendentes</a>
+          <a href='{{ route( 'orcamentosPendentes') }}'>Pendentes</a>
         </li>
         <li>
-          <a href='Orcamento-Concluidos.html'>Concluidos</a>
+          <a href='{{ route( 'orcamentosConcluidos') }}'>Concluidos</a>
         </li>
       </ul>
       </div>

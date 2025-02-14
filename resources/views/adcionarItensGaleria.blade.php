@@ -28,15 +28,15 @@
           </div>
           <br />
             <x-button-enviar descricao="Salvar">
-                Metodo salvar                
+                              
             </x-button-enviar>
             <x-button-limpar descricao="Limpar formulário">
             </x-button-limpar>
             <a
-            href="#">
-            <x-button-voltar descricao="Voltar">
-            </x-button-voltar>
-          </a>
+            href='{{ route( 'galeriaDashboard') }}'>
+              <x-button-voltar descricao="Voltar">
+              </x-button-voltar>
+            </a>
         </div>
         <div>
           <img
