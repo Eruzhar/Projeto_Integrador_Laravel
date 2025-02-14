@@ -13,7 +13,7 @@ class CategoriaBarController extends Controller
     public function index()
     {
         $cbs= CategoriaBar::all();
-        return view("categoria_post.index", [
+        return view("categoriabar.index", [
             "categoria_posts" => $cbs
         ]);
     }
@@ -23,7 +23,7 @@ class CategoriaBarController extends Controller
      */
     public function create()
     {
-        return view("categoria_bar.create");
+        return view("categoriabar.create");
     }
 
     /**
@@ -91,6 +91,6 @@ class CategoriaBarController extends Controller
     {
         $cbs = CategoriaBar::findOrFail($id);
         $cbs->delete();
-        return view("categoria_bar.index");
+        return view("categoriabar.index");
     }
 }

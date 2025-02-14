@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Cabeçalho{
+    text-align: center;
+    & div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.Filtro{
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;  
+    margin: 20px;
+    padding: 10px;
+    border: 3px solid #ccc;  
+    border-radius: 10px;
+    select{
+        margin: 0px 10px ;
+        padding: 5px;
+        width: 200px;
+    }
+}
+.DashBoard{    
+    margin: 20px;
+    padding: 20px;
+    border: 3px solid #ccc;  
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    & .card {
+        margin: 10px;
+        & .card-body{
+            & .button{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                & button{
+                    margin: 5
+                    px;
+                }
+            }
+        }
+    }
+}
+h1 {
+    text-align: center;
+}

@@ -15,7 +15,7 @@ class CategoriaEventoController extends Controller
     public function index()
     {
         $ces = CategoriaEvento ::all();
-        return view("categoria_evento", [
+        return view("categoriaevento.index", [
             "categoria_evento" => $ces
         ]);
     }
@@ -25,7 +25,7 @@ class CategoriaEventoController extends Controller
      */
     public function create()
     {
-        return view("categoria_evento.create");
+        return view("categoriaevento.create");
     }
 
     /**
@@ -52,7 +52,7 @@ class CategoriaEventoController extends Controller
     public function show(string $id)
     {
         $ces = Categoriaces::findOrFail($id);
-        return view("categoria_post.show", [
+        return view("categoriaevento.show", [
             "categoria_post"=> $ces
         ]);
     }
@@ -63,7 +63,7 @@ class CategoriaEventoController extends Controller
     public function edit(string $id)
     {
         $ces = CategoriaEvento::findOrFail($id);
-        return view("categoria_post.edit", [
+        return view("categoriaevento.edit", [
             "categoria_post"=> $ces
         ]);
     }
@@ -83,7 +83,7 @@ class CategoriaEventoController extends Controller
         $ces->name = $request->input('name');
         $ces->descricao = $request->input('descricao');
         $ces->update();
-        return redirect()->route('categoria_evento.index');
+        return redirect()->route('categoriaevento.index');
     }
 
     /**
@@ -93,6 +93,6 @@ class CategoriaEventoController extends Controller
     {
         $ces = CategoriaEvento::findOrFail($id);
         $ces->delete();
-        return view("categoria_evento.index");
+        return view("categoriaevento.index");
     }
 }

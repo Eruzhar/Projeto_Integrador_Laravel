@@ -13,7 +13,7 @@ class CategoriaPostController extends Controller
     public function index()
     {
         $cps = CategoriaPost::all();
-        return view("categoria_post.index", [
+        return view("categoriapost.index", [
             "categoria_posts" => $cps
         ]);
     }
@@ -23,7 +23,7 @@ class CategoriaPostController extends Controller
      */
     public function create()
     {
-        return view("categoria_post.create");
+        return view("categoriapost.create");
     }
 
     /**
@@ -32,16 +32,16 @@ class CategoriaPostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' =>'required',
+            'nome' =>'required',
             'descricao' =>'required'
         ]);
 
         $cps = new CategoriaPost();
         
-        $cps->name = $request->input('name');
+        $cps->nome = $request->input('nome');
         $cps->descricao = $request->input('descricao');
         $cps->save();
-        return view('categoria_post.create');
+        return view('categoriapost.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class CategoriaPostController extends Controller
     public function show(string $id)
     {
         $cps = CategoriaPost::findOrFail($id);
-        return view("categoria_post.show", [
+        return view("categoriapost.show", [
             "categoria_post"=> $cps
         ]);
     }
@@ -61,7 +61,7 @@ class CategoriaPostController extends Controller
     public function edit(string $id)
     {
         $cps = CategoriaPost::findOrFail($id);
-        return view("categoria_post.edit", [
+        return view("categoriapost.edit", [
             "categoria_post"=> $cps
         ]);
     }
@@ -72,16 +72,16 @@ class CategoriaPostController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' =>'required',
+            'nome' =>'required',
             'descricao' =>'required'
         ]);
 
         $cps = CategoriaPost::findOrFail($id);
         
-        $cps->name = $request->input('name');
+        $cps->nome = $request->input('nome');
         $cps->descricao = $request->input('descricao');
         $cps->update();
-        return view('categoria_post.index');
+        return view('categoriapost.index');
     }
 
     /**
@@ -91,6 +91,6 @@ class CategoriaPostController extends Controller
     {
         $cps = CategoriaPost::findOrFail($id);
         $cps->delete();
-        return view("categoria_post.index");
+        return view("categoriapost.index");
     }
 }

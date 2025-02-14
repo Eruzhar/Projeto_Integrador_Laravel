@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.Lista{
+    height: 68%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    background-color: #e70606;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    & table{
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        th, td{
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+    }
+}
+#Nome{
+    width: 20dvh;
+}
+.text-center{
+    & div{
+        display: flex;
+        justify-content: center;
+        & button{
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    }
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+.c{
+    display: grid;
+    grid-template-areas:
+                         "Menu Conteudo";
+    grid-template-columns: 12% auto;
+}
+li {
+    list-style-type: none;
+  }
+.sidebar{
+    grid-area: Menu;
+    background-color: #f2f2f2;
+    min-width: 100px;    
+}
+.form-outline{
+    margin: 0px 10px 0px 10px;
+}
+.conteudo{
+    grid-area: Conteudo;
+    height: 90lvh;
+    min-width: 900px;   
+}
+.Filtro{
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;  
+    margin: 20px;
+    padding: 10px;
+    border: 3px solid #ccc;  
+    border-radius: 10px;
+    select{
+        margin: 0px 10px ;
+        padding: 5px;
+        width: 200px;
+    }
+}

@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+.card-body{
+    display: grid;
+    place-content: center;
+}
+form{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;    
+}
+.Area-UpLoad{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.Area-text{    
+    & .form-Imagem{
+       & .Imagem{
+            width: 820px;
+            height: 32px;
+        }
+    }
+    & .form-Titulo{
+        & .Titulo-Imagem{
+            width: 900px;
+            height: 32px;
+        }    
+    }
+    & .form-Descrição{
+        & .Descrição{
+            width: 900px;
+            height: 300px;
+        }
+    }
+}
+#ImagemUpLoad{
+    width: 800px;
+    height: 800px;
+    object-fit: contain;
+}
