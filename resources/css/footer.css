@@ -36,7 +36,10 @@
 }
 .footer-container{
     display: grid;        
-    padding-left: 20px;     
+    padding-left: 20px;
+    justify-content: start;
+    align-items: start;
+    gap: 5px;
     grid-template-areas: 'c1 c2 c3 c4 c5' 'c1 c2 c3 c4 c5' ;
 }
 .copyright{
