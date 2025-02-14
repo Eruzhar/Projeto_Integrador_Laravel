@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+section {
+    display: grid;
+    place-content: center;
+    height: 80dvh;
+    
+    & form{
+        width: 600px;
+        height: 400px;
+        & button{
+            text-align: center;
+        }
+    }
+}
