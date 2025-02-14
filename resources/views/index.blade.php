@@ -4,6 +4,8 @@
     <section class="home-main">
         
     </section>
-    <section></section>
+    <section class="home-sub">
+        <h1 class="home-sub-text">Uma experiência sensorial única, que vai além do sabor.</h1>
+    </section>
     <x-footer></x-footer>
 </x-layout>
