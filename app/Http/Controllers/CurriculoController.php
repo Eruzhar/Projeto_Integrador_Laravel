@@ -40,18 +40,25 @@ class CurriculoController extends Controller
     {
         request()->validate([
             'nome'=> 'required',
-            'arquivo'=> 'required',
+            'arquivo'=> 'required|file|mimes:pdf,doc,docx|max:2048',
             'informacoes'=> 'required',
-            'profissao_id'=> 'required|exists:trabalho,id'
+            'profissao_id'=> 'required|exists:profissao,id'
         ]);
 
+        // Salvar o arquivo na pasta 'uploads' dentro de 'storage/app/public'
+        $path = $request->file('arquivo')->store('uploads', 'public');
+                
         $curriculo = new Curriculo();
         $curriculo->nome = $request->input('nome');
-        $curriculo->arquivo = $request->input('arquivo');
+        $curriculo->arquivo = $path;
         $curriculo->informacoes = $request->input('informacoes');
-        $curriculo->profissao = $request->input('profissao_id');
+        $curriculo->profissao_id = $request->input('profissao_id');
+        //dd($curriculo);
         $curriculo->save();
-        return view('curriculo.create');
+        $profissoes = Profissao::all();
+        return view('curriculo.create',[
+            'profissoes'=> $profissoes,
+        ])->with('message', 'Curriculo enviado!');
     }
 
     /**

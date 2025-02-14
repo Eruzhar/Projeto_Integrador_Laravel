@@ -12,11 +12,11 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 Route::get('/galeria',function (){
     return view('galeria');
-});
+})->name('galeria');
 
 Route::resource('curriculo', CurriculoController::class);
 Route::resource('categoriabar', CategoriaBarController::class);

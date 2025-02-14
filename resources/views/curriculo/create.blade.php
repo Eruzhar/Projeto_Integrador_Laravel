@@ -1,12 +1,13 @@
 <x-layout title="Trabalhe conosco">
     @vite(['resources/css/curriculo.create.css'])
     <x-header></x-header>
+    
     <main>
         <section class="chamada">
             <h1>Trabalhe Conosco</h1>
         </section>
         <section  class="formulario-container">
-           <form action="" class="formulario" method="post" id="my_form">
+           <form action="{{ route('curriculo.store') }}" class="formulario" method="post" id="my_form" enctype="multipart/form-data">
                 @csrf
                 <div class="formName">
                     <label for="nome" class="form-label">Nome Completo</label>
@@ -31,5 +32,8 @@
                 <button type="submit" class="btn btn-primary btn-lg botao-custom" id="form-button">Enviar</button>
            </form>
         </section>
+        @if(isset($message))
+        <div class="alert alert-success" role="alert">{{ $message }}</div>
+        @endif
     </main>
 </x-layout>
