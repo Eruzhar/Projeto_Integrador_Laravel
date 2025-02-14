@@ -1,0 +1,8 @@
+Lista de pendencias
+
+    Tiago
+
+        Atividade - Alteração das paginas criadas para o:
+        <x-layout-dashboard title="*nome da pagina*">
+            codigo html
+        </x-layout-dashboard>
