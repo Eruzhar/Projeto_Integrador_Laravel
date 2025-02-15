@@ -123,7 +123,7 @@ class PostController extends Controller
                 $post->arquivo = $request->input('arquivo');
                 $post->categoria_id = $categoria->id;
                 $post->save();
-                return view("dashboard.cardapioDashboard");
+                return redirect()->route("indexCardapio");
             }
         }
         return view("dashboard.adcionarItensCardapio");
@@ -148,7 +148,7 @@ class PostController extends Controller
                 $post->arquivo = $request->input('arquivo');
                 $post->categoria_id = $categoria->id;
                 $post->save();
-                return view("dashboard.ambienteDashboard");
+                return redirect()->route("indexAmbiente");
             }
         }
         return view("dashboard.adcionarItensAmbiente");

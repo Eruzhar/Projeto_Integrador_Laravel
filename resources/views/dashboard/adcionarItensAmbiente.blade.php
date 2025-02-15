@@ -1,8 +1,14 @@
 <x-layout-dashboard title="Up Load"  css="resources/css/dashboard/style.css">
 
     <x-header-dashboard></x-header-dashboard>
-    <form action="{{ route('storeAmbiente') }}" method="post">
+    @if(isset($post))
+      <form action="{{ route('post.update', $post->id) }}" method="post">
       @csrf
+      @method("PUT")
+    @else
+      <form action="{{ route('storeGaleria') }}" method="post">
+      @csrf
+    @endif      
       <h1>Upload de Imagens</h1>
       <div class="Area-UpLoad">
         <div class="Area-text">
@@ -14,6 +20,7 @@
               idplaceholder="Imagem"
               id="arquivo"
               name="arquivo"
+              value="@if(isset($post))<?php echo($post->arquivo)?> @endif"
               required
               />
               <x-button-limpar descricao="Limpar imagem">
@@ -21,18 +28,26 @@
               </div>
             <div class="form-Titulo">
               <input type="text" class="Titulo-Imagem" id="tag" name="tag" value="ambiente" style="display: none;">
+              <div style="display: none;">
+                <input type="text" class="Titulo-Imagem" id="tag" name="tag" value="ambiente" style="display: none;">
+              </div>
               <h4>Titulo</h4>
-              <input type="text" class="Titulo-Imagem" placeholder="Titulo" id="titulo" name="titulo" required/>
+              <input type="text" class="Titulo-Imagem" placeholder="Titulo" id="titulo" name="titulo" required value="@if(isset($post))<?php echo($post->titulo)?> @endif"/>
             </div>
             <br />
             <div class="form-Descrição">
               <h4>Descrição da imagem</h4>
-              <input type="textArea" class="Descrição" placeholder="Descrição" id="descricao" name="descricao" required/>
+              <input type="textArea" class="Descrição" placeholder="Descrição" id="descricao" name="descricao" required value="@if(isset($post))<?php echo($post->descricao)?> @endif"/>
             </div>
             <br />
-            <x-button-enviar descricao="Salvar">
-                              
-            </x-button-enviar>
+            @if(isset($post))
+              <x-button-enviar descricao="Atualizar">
+              </x-button-enviar>
+          @else
+              <x-button-enviar descricao="Salvar">
+              </x-button-enviar>
+          @endif
+
             <x-button-limpar descricao="Limpar formulário">
             </x-button-limpar>
             <a href='{{ route( 'ambienteDashboard') }}'>
@@ -46,5 +61,5 @@
             src="{{ asset('img/istockphoto-1147544807-1024x1024.jpg')}}" alt=""/>
         </div>
       </div>
-    </f>
+      </form>
 </x-layout-dashboard>

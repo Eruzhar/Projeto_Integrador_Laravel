@@ -21,9 +21,9 @@
               id="arquivo"
               name="arquivo"
               value="@if(isset($post))<?php echo($post->arquivo)?> @endif"
+              required
             />
             <x-button-limpar descricao="Lipar imagem">
-                Metodo carregar imagem
             </x-button-limpar>
           </div>
           <div class="form-Titulo">
