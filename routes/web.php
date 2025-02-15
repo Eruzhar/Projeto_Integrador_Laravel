@@ -53,7 +53,7 @@ Route::get('/post/{id}/editCardapio', [PostController::class, 'editCardapio'])->
 
 //Galeria
 Route::post('/dashboard/galeria/store', [PostController::class, 'storeGaleria'])->name('storeGaleria');
-Route::get('/dashboard/galeria',function (){return view('dashboard.galeriaDashboard');})->name('galeriaDashboard');
+Route::get('/dashboard/galeria',[PostController::class, 'indexGaleria'])->name('galeriaDashboard');
 Route::get('/dashboard/galeria/novo',function (){    return view('dashboard.adcionarItensGaleria');})->name('galeriaNovo');
 Route::get('/post/{id}/editGaleria', [PostController::class, 'editGaleria'])->name('editGaleria');
 //Route::delete('/post/{id}/destroyGaleria', [PostController::class, 'destroyGaleria'])->name('destroyGaleria');

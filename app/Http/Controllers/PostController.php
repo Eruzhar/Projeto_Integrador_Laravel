@@ -21,27 +21,27 @@ class PostController extends Controller
     }
     public function indexAmbiente()
     {
-        $posts = Post::all();
-
+        $posts = $this->getIndex();
         return view("dashboard.ambienteDashboard", [
             "posts" => $posts
         ]);
     }
     public function indexCardapio()
     {
-        $posts = Post::all();
-
+        $posts = $this->getIndex();
         return view("dashboard.cardapioDashboard", [
             "posts" => $posts
         ]);
     }
     public function indexGaleria()
     {
-        $posts = Post::all();
-
+        $posts = $this->getIndex();
         return view("dashboard.galeriaDashboard", [
             "posts" => $posts
         ]);
+    }
+    private function getIndex(){
+        return Post::all();
     }
 
     /**
