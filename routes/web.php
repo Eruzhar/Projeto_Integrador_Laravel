@@ -56,8 +56,10 @@ Route::post('/dashboard/galeria/store', [PostController::class, 'storeGaleria'])
 Route::get('/dashboard/galeria',function (){return view('dashboard.galeriaDashboard');})->name('galeriaDashboard');
 Route::get('/dashboard/galeria/novo',function (){    return view('dashboard.adcionarItensGaleria');})->name('galeriaNovo');
 Route::get('/post/{id}/editGaleria', [PostController::class, 'editGaleria'])->name('editGaleria');
-Route::delete('/post/{id}/destroyGaleria', [PostController::class, 'destroyGaleria'])->name('destroyGaleria');
+//Route::delete('/post/{id}/destroyGaleria', [PostController::class, 'destroyGaleria'])->name('destroyGaleria');
+Route::delete('/post/{id}/destroy', [PostController::class, 'destroy'])->name('post.destroy');
 Route::get('/indexGaleria', [PostController::class, 'indexGaleria'])->name('indexGaleria');
+Route::put('/post/{id}/updateVisibilidade', [PostController::class, 'updateVisibilidade'])->name('updateVisibilidade');
 
 
 

@@ -201,6 +201,14 @@ class PostController extends Controller
         return view('post.index');
     }
 
+    public function updateVisibilidade(Request $request, string $id)
+    {
+        $post = Post::findOrFail($id);
+        
+        $post->visibilidade = !$post->visibilidade;
+        $post->update();
+        return redirect()->to(url()->previous());
+    }
     /**
      * Remove the specified resource from storage.
      */
@@ -208,7 +216,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->delete();
-        return view("post.index"); 
+        return redirect()->to(url()->previous());
     }
     public function destroyGaleria(string $id)
     {
