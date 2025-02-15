@@ -21,7 +21,7 @@ class PostController extends Controller
     }
     public function indexAmbiente()
     {
-        $categoria_id = $this->getCategoria_id("galeria");
+        $categoria_id = $this->getCategoria_id("ambiente");
         $posts = $this->getIndex($categoria_id);
         return view("dashboard.ambienteDashboard", [
             "posts" => $posts
@@ -29,7 +29,7 @@ class PostController extends Controller
     }
     public function indexCardapio()
     {
-        $categoria_id = $this->getCategoria_id("galeria");
+        $categoria_id = $this->getCategoria_id("cardapio");
         $posts = $this->getIndex($categoria_id);
         return view("dashboard.cardapioDashboard", [
             "posts" => $posts

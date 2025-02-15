@@ -1,9 +1,14 @@
 <x-layout-dashboard title="Up Load"  css="resources/css/dashboard/style.css">
 
     <x-header-dashboard></x-header-dashboard>
-  <form action="{{ route('storeCardapio') }}" method="post">
-    @csrf
-      
+    @if(isset($post))
+      <form action="{{ route('post.update', $post->id) }}" method="post">
+      @csrf
+      @method("PUT")
+    @else
+      <form action="{{ route('storeCardapio') }}" method="post">
+      @csrf
+    @endif      
       <h1>Upload de Imagens</h1>
       <div class="Area-UpLoad">
         <div class="Area-text">
@@ -15,6 +20,7 @@
               idplaceholder="Imagem"
               id="arquivo"
               name="arquivo"
+              value="@if(isset($post))<?php echo($post->arquivo)?> @endif"
             />
             <x-button-limpar descricao="Lipar imagem">
                 Metodo carregar imagem
@@ -33,10 +39,15 @@
             <input type="textArea" class="Descrição" placeholder="Descrição" id="descricao" name="descricao"/>
           </div>
           <br />
-            <x-button-enviar descricao="Salvar">
+          @if(isset($post))
+              <x-button-enviar descricao="Atualizar">
+              </x-button-enviar>
+          @else
+              <x-button-enviar descricao="Salvar">
+              </x-button-enviar>
+          @endif
                               
-            </x-button-enviar>
-            <x-button-limpar descricao="Limpar formulário">
+          <x-button-limpar descricao="Limpar formulário">
             </x-button-limpar>
             <a
             href='{{ route( 'cardapioDashboard') }}'>

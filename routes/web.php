@@ -41,15 +41,17 @@ Route::get('/dashboard/orcamento/concluidos',function (){    return view('dashbo
 
 //Ambiente
 Route::post('/dashboard/ambiente/store', [PostController::class, 'storeAmbiente'])->name('storeAmbiente');
-Route::get('/dashboard/ambiente',function (){    return view('dashboard.ambienteDashboard');})->name('ambienteDashboard');
+Route::get('/dashboard/ambiente',[PostController::class,'indexAmbiente'])->name('ambienteDashboard');
 Route::get('/dashboard/ambiente/novo',function (){    return view('dashboard.adcionarItensAmbiente');})->name('ambienteNovo');
 Route::get('/post/{id}/editAmbiente', [PostController::class, 'editAmbiente'])->name('editAmbiente');
+Route::get('/indexAmbiente', [PostController::class, 'indexAmbiente'])->name('indexAmbiente');
 
 //Cardapio
 Route::post('/dashboard/cardapio/store', [PostController::class, 'storeCardapio'])->name('storeCardapio');
 Route::get('/dashboard/cardapio/novo',function (){    return view('dashboard.adcionarItensCardapio');})->name('cardapioNovo');
-Route::get('/dashboard/cardapio',function (){    return view('dashboard.cardapioDashboard');})->name('cardapioDashboard');
+Route::get('/dashboard/cardapio',[PostController::class,'indexCardapio'])->name('cardapioDashboard');
 Route::get('/post/{id}/editCardapio', [PostController::class, 'editCardapio'])->name('editCardapio');
+Route::get('/indexCardapio', [PostController::class, 'indexCardapio'])->name('indexCardapio');
 
 //Galeria
 Route::post('/dashboard/galeria/store', [PostController::class, 'storeGaleria'])->name('storeGaleria');
