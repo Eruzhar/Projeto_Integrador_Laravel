@@ -5,7 +5,7 @@
         <h1>Dashboard Loja</h1>
         <section>
             <div>
-                <a href='{{route('galeriaDashboard')}}'><button type="button" class="btn btn-primary">Galeria</button></a>
+                <a href='{{route('post.index')}}'><button type="button" class="btn btn-primary">Galeria</button></a>
                 <a href='{{route('cardapioDashboard')}}'><button type="button" class="btn btn-primary">Cardapio</button></a>
             </div>
             <div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoriaPost;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -12,9 +13,33 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('categoria')->get();
+        $posts = Post::all();
 
-        return view("post.index", [
+        return view("dashboard.galeriaDashboard", [
+            "posts" => $posts
+        ]);
+    }
+    public function indexAmbiente()
+    {
+        $posts = Post::all();
+
+        return view("dashboard.ambienteDashboard", [
+            "posts" => $posts
+        ]);
+    }
+    public function indexCardapio()
+    {
+        $posts = Post::all();
+
+        return view("dashboard.cardapioDashboard", [
+            "posts" => $posts
+        ]);
+    }
+    public function indexGaleria()
+    {
+        $posts = Post::all();
+
+        return view("dashboard.galeriaDashboard", [
             "posts" => $posts
         ]);
     }
@@ -30,25 +55,83 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, CategoriaPost $categoria)
+    {
+    }
+    public function storeGaleria(Request $request)
     {
         $request->validate([
             'titulo' =>'required|max:255',
             'descricao' =>'required',
-            'visibilidade' =>'required',
             'arquivo' =>'required',
-            'categoria_id' =>'required|exists:categorias,id'
         ]);
 
-        $post = new Post();
+        $categorias = CategoriaPost::all();
+
+        foreach ($categorias as $categoria){
+            if ($request->input('tag') == $categoria->nome){
+                $post = new Post();
+
+                $post->titulo = $request->input('titulo');
+                $post->descricao = $request->input('descricao');
+                $post->visibilidade = true;
+                $post->arquivo = $request->input('arquivo');
+                $post->categoria_id = $categoria->id;
+                $post->save();                        
+                return view("dashboard.galeriaDashboard");
+            }
+        }
+        return view("dashboard.adcionarItensGaleria");
+    }
+    public function storeCardapio(Request $request)
+    {
+        $request->validate([
+            'titulo' =>'required|max:255',
+            'descricao' =>'required',
+            'arquivo' =>'required',
+        ]);
+
+        $categorias = CategoriaPost::all();
+
+        foreach ($categorias as $categoria){
+            if ($request->input('tag') == $categoria->nome){
+                $post = new Post();
         
-        $post->titulo = $request->input('titulo');
-        $post->descricao = $request->input('descricao');
-        $post->visibilidade = $request->input('visibilidade');
-        $post->arquivo = $request->input('arquivo');
-        $post->categoria_id = $request->input('categoria_id');
-        $post->save();
-        return view("post.create");
+                $post->titulo = $request->input('titulo');
+                $post->descricao = $request->input('descricao');
+                $post->visibilidade = true;
+                $post->arquivo = $request->input('arquivo');
+                $post->categoria_id = $categoria->id;
+                $post->save();
+                return view("dashboard.cardapioDashboard");
+            }
+        }
+        return view("dashboard.adcionarItensCardapio");
+    }
+    public function storeAmbiente(Request $request)
+    {
+        $request->validate([
+            'titulo' =>'required|max:255',
+            'descricao' =>'required',
+            'arquivo' =>'required',
+        ]);
+
+        $categorias = CategoriaPost::all();
+
+        foreach ($categorias as $categoria){
+            if ($request->input('tag') == $categoria->nome){
+                $post = new Post();
+        
+                $post->titulo = $request->input('titulo');
+                $post->descricao = $request->input('descricao');
+                $post->visibilidade = true;
+                $post->arquivo = $request->input('arquivo');
+                $post->categoria_id = $categoria->id;
+                $post->save();
+                return view("dashboard.ambienteDashboard");
+            }
+        }
+        return view("dashboard.adcionarItensAmbiente");
     }
 
     /**
@@ -68,7 +151,28 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::findOrFail($id);
-        return view("post.edit", [
+        return view("dashboard.adcionarItensGaleria", [
+            "post"=> $post
+        ]);
+    }
+    public function editGaleria(string $id)
+    {
+        $post = Post::findOrFail($id);
+        return view("dashboard.adcionarItensGaleria", [
+            "post"=> $post
+        ]);
+    }
+    public function editAmbiente(string $id)
+    {
+        $post = Post::findOrFail($id);
+        return view("dashboard.adcionarItensAmbiente", [
+            "post"=> $post
+        ]);
+    }
+    public function editCardapio(string $id)
+    {
+        $post = Post::findOrFail($id);
+        return view("dashboard.adcionarItensCardapio", [
             "post"=> $post
         ]);
     }
@@ -105,5 +209,11 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->delete();
         return view("post.index"); 
+    }
+    public function destroyGaleria(string $id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect()->route('indexGaleria');
     }
 }

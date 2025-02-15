@@ -101,5 +101,4 @@ const json = [
     }
 ]
     
-AddRegists(json);
 deleteItem();

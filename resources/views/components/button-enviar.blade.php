@@ -1,7 +1,6 @@
 @props(['descricao'=>'nome'])
 <button
     type="submit"
-    onclick="SalvarImagem()"
     class="btn btn-primary"
     data-bs-toggle="tooltip"
     data-bs-placement="top"

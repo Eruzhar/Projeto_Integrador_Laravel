@@ -67,15 +67,15 @@ class DatabaseSeeder extends Seeder
             'descricao' => 'Bar 3Desc',
         ]);
         CategoriaPost::factory()->create([
-            'nome'=> 'Bar',
+            'nome'=> 'ambiente',
             'descricao' => 'BarDesc',
         ]);
         CategoriaPost::factory()->create([
-            'nome'=> 'Drink',
+            'nome'=> 'galeria',
             'descricao' => 'DrinkDesc',
         ]);
         CategoriaPost::factory()->create([
-            'nome'=> 'Evento',
+            'nome'=> 'cardapio',
             'descricao' => 'EventoDesc',
         ]);
         CategoriaEvento::factory()->create([

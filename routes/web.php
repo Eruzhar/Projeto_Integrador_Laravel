@@ -23,54 +23,42 @@ Route::get('/sobrenos',function (){
 })->name('sobrenos');
 
 Route::resource('curriculo', CurriculoController::class);
-Route::resource('categoriabar', CategoriaBarController::class);
-Route::resource('categoriaevento', CategoriaEventoController::class);
-Route::resource('categoriapost', CategoriaPostController::class);
-Route::resource('cotacao', CotacaoController::class);
-Route::resource('statuscotacao', StatusCotacaoController::class);
-Route::resource('profissao', ProfissaoController::class);
+//Route::resource('categoriabar', CategoriaBarController::class);
+//Route::resource('categoriaevento', CategoriaEventoController::class);
+//Route::resource('categoriapost', CategoriaPostController::class);
+//Route::resource('cotacao', CotacaoController::class);
+//Route::resource('statuscotacao', StatusCotacaoController::class);
+//Route::resource('profissao', ProfissaoController::class);
 Route::resource('post', PostController::class);
 
-Route::get('/dashboard',function (){
-    return view('dashboard.menuDashboard');
-})->name('menu');
+Route::get('/dashboard',function (){return view('dashboard.menuDashboard');})->name('menu');
 
-Route::get('/dashboard/galeria',function (){
-    return view('dashboard.galeriaDashboard');
-})->name('galeriaDashboard');
+Route::get('/dashboard/login',function (){    return view('dashboard.login');})->name('login');
 
-Route::get('/dashboard/ambiente',function (){
-    return view('dashboard.ambienteDashboard');
-})->name('ambienteDashboard');
+Route::get('/dashboard/orcamento/novo',function (){    return view('dashboard.orcamentos.novo');})->name('orcamentosNovos');
+Route::get('/dashboard/orcamento/pendente',function (){return view('dashboard.orcamentos.pendente');})->name('orcamentosPendentes');
+Route::get('/dashboard/orcamento/concluidos',function (){    return view('dashboard.orcamentos.concluidos');})->name('orcamentosConcluidos');
 
-Route::get('/dashboard/cardapio',function (){
-    return view('dashboard.cardapioDashboard');
-})->name('cardapioDashboard');
+//Ambiente
+Route::post('/dashboard/ambiente/store', [PostController::class, 'storeAmbiente'])->name('storeAmbiente');
+Route::get('/dashboard/ambiente',function (){    return view('dashboard.ambienteDashboard');})->name('ambienteDashboard');
+Route::get('/dashboard/ambiente/novo',function (){    return view('dashboard.adcionarItensAmbiente');})->name('ambienteNovo');
+Route::get('/post/{id}/editAmbiente', [PostController::class, 'editAmbiente'])->name('editAmbiente');
 
-Route::get('/dashboard/galeria/novo',function (){
-    return view('dashboard.adcionarItensGaleria');
-})->name('galeriaNovo');
+//Cardapio
+Route::post('/dashboard/cardapio/store', [PostController::class, 'storeCardapio'])->name('storeCardapio');
+Route::get('/dashboard/cardapio/novo',function (){    return view('dashboard.adcionarItensCardapio');})->name('cardapioNovo');
+Route::get('/dashboard/cardapio',function (){    return view('dashboard.cardapioDashboard');})->name('cardapioDashboard');
+Route::get('/post/{id}/editCardapio', [PostController::class, 'editCardapio'])->name('editCardapio');
 
-Route::get('/dashboard/ambiente/novo',function (){
-    return view('dashboard.adcionarItensAmbiente');
-})->name('ambienteNovo');
+//Galeria
+Route::post('/dashboard/galeria/store', [PostController::class, 'storeGaleria'])->name('storeGaleria');
+Route::get('/dashboard/galeria',function (){return view('dashboard.galeriaDashboard');})->name('galeriaDashboard');
+Route::get('/dashboard/galeria/novo',function (){    return view('dashboard.adcionarItensGaleria');})->name('galeriaNovo');
+Route::get('/post/{id}/editGaleria', [PostController::class, 'editGaleria'])->name('editGaleria');
+Route::delete('/post/{id}/destroyGaleria', [PostController::class, 'destroyGaleria'])->name('destroyGaleria');
+Route::get('/indexGaleria', [PostController::class, 'indexGaleria'])->name('indexGaleria');
 
-Route::get('/dashboard/cardapio/novo',function (){
-    return view('dashboard.adcionarItensCardapio');
-})->name('cardapioNovo');
 
-Route::get('/dashboard/login',function (){
-    return view('dashboard.login');
-})->name('login');
 
-Route::get('/dashboard/orcamento/novo',function (){
-    return view('dashboard.orcamentos.novo');
-})->name('orcamentosNovos');
 
-Route::get('/dashboard/orcamento/pendente',function (){
-    return view('dashboard.orcamentos.pendente');
-})->name('orcamentosPendentes');
-
-Route::get('/dashboard/orcamento/concluidos',function (){
-    return view('dashboard.orcamentos.concluidos');
-})->name('orcamentosConcluidos');
