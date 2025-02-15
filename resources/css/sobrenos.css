@@ -16,24 +16,25 @@ body {
     display: flex;
     flex-direction: column;
 }
-.sn-main{    
-    flex-grow: 1;
+.page{
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+.sn-main{        
     justify-content: center;
     align-content: start;
     padding: 0 20dvw;        
     /*border-radius: 10px;*/
-    height: 40dvh;        
-    position: relative;  
+    height: auto;            
 }
 .sn-sub{
-    flex-grow: 1;
-    justify-content: center;
-    align-content: start;
-    padding: 0 20dvw;        
-    /*border-radius: 10px;*/
-    height: 50dvh;        
+    flex-grow: 1;          
     background-image: url("../../public/img/sobrenosBg.png"); 
-    background-size: cover;    
+    background-position: center;
+    background-size: cover;        
+    background-repeat: no-repeat;
+    /*height: fill; */
 }
 .sn-h1{
     font-size: 2.5rem;

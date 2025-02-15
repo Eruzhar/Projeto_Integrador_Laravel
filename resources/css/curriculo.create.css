@@ -60,13 +60,17 @@ h1 {
     margin: 0 0.5rem 0 0.5rem;
 }
 */
+.page{
+    display:flex;
+    flex-direction: column;
+    height: 100dvh;
+}
 .chamada{
     display: flex;
     justify-content: center;
     align-content: center;
     padding: 10px;        
-    border-radius: 10px;
-    cursor: pointer;    
+    border-radius: 10px;    
     background-image: url("../../public/img/blurrdrinks.png"); 
     & h1{
         color: var(--text-color);
