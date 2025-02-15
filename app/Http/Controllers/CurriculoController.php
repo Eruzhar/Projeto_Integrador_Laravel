@@ -46,7 +46,7 @@ class CurriculoController extends Controller
         ]);
 
         // Salvar o arquivo na pasta 'uploads' dentro de 'storage/app/public'
-        $path = $request->file('arquivo')->store('uploads', 'public');
+        $path = $request->file('arquivo')->store('curriculos', 'public');
                 
         $curriculo = new Curriculo();
         $curriculo->nome = $request->input('nome');

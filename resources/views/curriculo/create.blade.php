@@ -17,7 +17,7 @@
                 <select name="profissao_id" id="" class="form-select">
                     <option value="">Selecione a vaga</option>
                     @foreach($profissoes as $profissao)
-                    <option value="{{$profissao->id}}" href="#">{{$profissao->name}}</></option>
+                    <option value="{{$profissao->id}}" href="#">{{$profissao->nome}}</></option>
                     @endforeach                     
                 </select>                
                 <div class="mb-3 curriculo">
