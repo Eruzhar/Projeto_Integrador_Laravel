@@ -21,29 +21,50 @@ class PostController extends Controller
     }
     public function indexAmbiente()
     {
-        $posts = $this->getIndex();
+        $categoria_id = $this->getCategoria_id("galeria");
+        $posts = $this->getIndex($categoria_id);
         return view("dashboard.ambienteDashboard", [
             "posts" => $posts
         ]);
     }
     public function indexCardapio()
     {
-        $posts = $this->getIndex();
+        $categoria_id = $this->getCategoria_id("galeria");
+        $posts = $this->getIndex($categoria_id);
         return view("dashboard.cardapioDashboard", [
             "posts" => $posts
         ]);
     }
     public function indexGaleria()
     {
-        $posts = $this->getIndex();
+        $categoria_id = $this->getCategoria_id("galeria");
+        $posts = $this->getIndex($categoria_id);
         return view("dashboard.galeriaDashboard", [
             "posts" => $posts
         ]);
     }
-    private function getIndex(){
-        return Post::all();
+    private function getIndex($categoria_id){
+        $posts = Post::all()->where('categoria_id', $categoria_id);
+        $i = 0;
+        foreach ($posts as $post) {
+            if($post->categoria_id != $categoria_id){
+                //reirar item de um array
+                $posts->forget($i);
+            }
+            $i++;
+        }
+        return $posts;
     }
 
+    private function getCategoria_id($nome){
+
+        $categorias = CategoriaPost::all();
+        foreach ($categorias as $categoria){
+            if($categoria->nome == $nome){
+                return $categoria->id;
+            }
+        }
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -65,7 +86,6 @@ class PostController extends Controller
             'descricao' =>'required',
             'arquivo' =>'required',
         ]);
-
         $categorias = CategoriaPost::all();
 
         foreach ($categorias as $categoria){
@@ -78,7 +98,7 @@ class PostController extends Controller
                 $post->arquivo = $request->input('arquivo');
                 $post->categoria_id = $categoria->id;
                 $post->save();                        
-                return view("dashboard.galeriaDashboard");
+                return redirect()->route('indexGaleria');
             }
         }
         return view("dashboard.adcionarItensGaleria");
@@ -185,20 +205,15 @@ class PostController extends Controller
         $request->validate([
             'titulo' =>'required|max:255',
             'descricao' =>'required',
-            'visibilidade' =>'required',
             'arquivo' =>'required',
-            'categoria_id' =>'required|exists:categorias,id'
         ]);
-
         $post = Post::findOrFail($id);
         
         $post->titulo = $request->input('titulo');
         $post->descricao = $request->input('descricao');
-        $post->visibilidade = $request->input('visibilidade');
         $post->arquivo = $request->input('arquivo');
-        $post->categoria_id = $request->input('categoria_id');
         $post->update();
-        return view('post.index');
+        return view('menu');
     }
 
     public function updateVisibilidade(Request $request, string $id)

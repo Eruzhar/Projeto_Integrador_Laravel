@@ -1,9 +1,14 @@
 <x-layout-dashboard title="Up Load"  css="resources/css/dashboard/style.css">
 
     <x-header-dashboard></x-header-dashboard>
-  <form action="{{ route('storeGaleria') }}" method="post">
-    @csrf
-      
+    @if(isset($post))
+      <form action="{{ route('post.update', $post->id) }}" method="post">
+      @csrf
+      @method("PUT")
+    @else
+      <form action="{{ route('storeGaleria') }}" method="post">
+      @csrf
+    @endif      
       <h1>Upload de Imagens</h1>
       <div class="Area-UpLoad">
         <div class="Area-text">
@@ -15,6 +20,7 @@
               idplaceholder="Imagem"
               id="arquivo"
               name="arquivo"
+              value="@if(isset($post))<?php echo($post->arquivo)?> @endif"
             />
             <x-button-limpar descricao="Lipar imagem">
                 Metodo carregar imagem
@@ -25,17 +31,22 @@
             <input type="text" class="Titulo-Imagem" id="tag" name="tag" value="galeria" style="display: none;">
             </div>
             <h4>Titulo</h4>
-            <input type="text" class="Titulo-Imagem" placeholder="Titulo" id="titulo" name="titulo" requerid/>
+            <input type="text" class="Titulo-Imagem" placeholder="Titulo" id="titulo" name="titulo" requerid value="@if(isset($post))<?php echo($post->titulo)?> @endif"/>
           </div>
           <br />
           <div class="form-Descrição">
             <h4>Descrição da imagem</h4>
-            <input type="textArea" class="Descrição" placeholder="Descrição" id="descricao" name="descricao"/>
+            <input type="textArea" class="Descrição" placeholder="Descrição" id="descricao" name="descricao" value="@if(isset($post))<?php echo($post->descricao)?> @endif"/>
           </div>
           <br />
-            <x-button-enviar descricao="Salvar">
+          @if(isset($post))
+              <x-button-enviar descricao="Atualizar">
+              </x-button-enviar>
+          @else
+              <x-button-enviar descricao="Salvar">
+              </x-button-enviar>
+          @endif
                               
-            </x-button-enviar>
             <x-button-limpar descricao="Limpar formulário">
             </x-button-limpar>
             <a

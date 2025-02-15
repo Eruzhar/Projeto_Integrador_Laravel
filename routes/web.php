@@ -29,7 +29,7 @@ Route::resource('curriculo', CurriculoController::class);
 //Route::resource('cotacao', CotacaoController::class);
 //Route::resource('statuscotacao', StatusCotacaoController::class);
 //Route::resource('profissao', ProfissaoController::class);
-Route::resource('post', PostController::class);
+//Route::resource('post', PostController::class);
 
 Route::get('/dashboard',function (){return view('dashboard.menuDashboard');})->name('menu');
 
@@ -60,6 +60,7 @@ Route::get('/post/{id}/editGaleria', [PostController::class, 'editGaleria'])->na
 Route::delete('/post/{id}/destroy', [PostController::class, 'destroy'])->name('post.destroy');
 Route::get('/indexGaleria', [PostController::class, 'indexGaleria'])->name('indexGaleria');
 Route::put('/post/{id}/updateVisibilidade', [PostController::class, 'updateVisibilidade'])->name('updateVisibilidade');
+Route::put('/post/update', [PostController::class, 'update'])->name('post.update');
 
 
 
