@@ -5,11 +5,20 @@ Lista de pendencias
         buscar pelo texto
         filtar
         ordenar
+        exibição
         inserir campo data na visualização dos posts
         subir imagem
         descer imagem
         curriculos
+            funcionar o preencimento do index
+            pagina de edição
+            deletar
+            ver curriculo
         cotações
+            funcionar o preencimento do index
+            pagina de edição
+            deletar
+            alterar status
         profissões
         login
 
