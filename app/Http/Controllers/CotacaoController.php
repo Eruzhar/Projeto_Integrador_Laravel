@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cotacao;
+use App\Models\StatusCotacao;
 
 class CotacaoController extends Controller
 {
@@ -17,7 +18,46 @@ class CotacaoController extends Controller
             "cotacoes"=> $cotacoes
         ]);
     }
+    public function indexConcluido()
+    {
+        $statusCotacao_id = $this->getStatusCotacao_id("Concluído");
+        $cotacoes = $this->getIndex($statusCotacao_id);
+        return view("dashboard.orcamentos.concluido", [
+            "cotacoes" => $cotacoes
+        ]);
+    
+    }public function indexPendente()
+    {
+        $statusCotacao_id = $this->getStatusCotacao_id("Pendente");
+        $cotacoes = $this->getIndex($statusCotacao_id);
+        return view("dashboard.orcamentos.pendente", [
+            "cotacoes" => $cotacoes
+        ]);
+    }
+    public function indexNovo()
+    {
+        $statusCotacao_id = $this->getStatusCotacao_id("Novo");
+        $cotacoes = $this->getIndex($statusCotacao_id);
+        return view("dashboard.orcamentos.novo", [
+            "cotacoes" => $cotacoes
+        ]);
+    }
+    
+    
+    private function getIndex($statusCotacao_id){
+        $cotacoes = Cotacao::all()->where('status_cotacao_id', $statusCotacao_id);
+        return $cotacoes;
+    }
 
+    private function getStatusCotacao_id($nome){
+
+        $statusCotacoes = StatusCotacao::all();
+        foreach ($statusCotacoes as $statusCotacao){
+            if($statusCotacao->nome == $nome){
+                return $statusCotacao->id;
+            }
+        }
+    }
     /**
      * Show the form for creating a new resource.
      */
