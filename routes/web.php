@@ -35,9 +35,21 @@ Route::get('/dashboard',function (){return view('dashboard.menuDashboard');})->n
 
 Route::get('/dashboard/login',function (){    return view('dashboard.login');})->name('login');
 
-Route::get('/dashboard/orcamento/novo',function (){    return view('dashboard.orcamentos.novo');})->name('orcamentosNovos');
-Route::get('/dashboard/orcamento/pendente',function (){return view('dashboard.orcamentos.pendente');})->name('orcamentosPendentes');
-Route::get('/dashboard/orcamento/concluidos',function (){    return view('dashboard.orcamentos.concluidos');})->name('orcamentosConcluidos');
+//Orçamentos
+
+//Novos
+Route::get('/dashboard/orcamento/novo',[CotacaoController::class, 'indexNovo'])->name('orcamentosNovo');
+Route::get('/index/novo',[CotacaoController::class, 'indexNovo'])->name('indexOrcamentosNovo');
+
+//Pendentes
+Route::get('/dashboard/orcamento/pendente',[CotacaoController::class, 'indexPendente'])->name('orcamentosPendente');
+Route::get('/index/pendente',[CotacaoController::class, 'indexPendente'])->name('indexOrcamentosPendente');
+
+//Concluidos
+Route::get('/dashboard/orcamento/concluido',[CotacaoController::class, 'indexConcluido'])->name('orcamentosConcluido');
+Route::get('/index/concluido',[CotacaoController::class, 'indexConcluido'])->name('indexOrcamentosConcluido');
+
+
 
 //Ambiente
 Route::post('/dashboard/ambiente/store', [PostController::class, 'storeAmbiente'])->name('storeAmbiente');
