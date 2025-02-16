@@ -37,24 +37,35 @@ $buttonEditar = "<button type='submit' class='btn btn-primary' data-bs-toggle='t
         <br/>
         <section class="Lista">
             <table class="table">
-            @if(isset($cotacoes))
-            @foreach ($cotacoes as $cotacao)
-              <tr id='id{{ $cotacao->id }}'>
-                <td scope='row' class='text-center'>{{ $cotacao->id }}</td>
-                <td class='text-center'>{{ $cotacao->telefone}}</td>
-                <td class='text-center'>{{ $cotacao->nome}}</td>
-                <td class='text-center'>{{ $cotacao->categoria_evento_id}}</td>
-                <td class='text-center'>{{ $cotacao->data_evento}}</td>
-                <td class='text-center'>
-                  <div>
-                    <?php echo(str_replace("row#","row" + $cotacao->id,$buttonLixeira))?>
-                    <?php echo(str_replace("row#","row" + $cotacao->id, $buttonOlho))?>
-                    <?php echo(str_replace("row#","row" + $cotacao->id,$buttonEditar))?>
-                  </div>
-                </td>
-              </tr>
-            @endforeach
-          @endif
+              <thead>
+                <th scope='col' class='text-center'>#</th>
+                <th scope='col' class='text-center'>Data Recebimento</th>
+                <th scope='col' class='text-center'>Contato</th>
+                <th scope='col' class='text-center'>Nome</th>
+                <th scope='col' class='text-center'>Evento</th>
+                <th scope='col' class='text-center'>Data Evento</th><th scope='col' class='text-center'>Pendência</th>
+                <th scope='col' class='text-center'>Acompanhemento</th>
+              </thead>
+              @if(isset($cotacoes))
+                @foreach ($cotacoes as $cotacao)
+                  <thead>
+                    <tr id='id{{ $cotacao->id }}'>
+                      <td scope='row' class='text-center'>{{ $cotacao->id }}</td>
+                      <td class='text-center'>{{ $cotacao->telefone}}</td>
+                      <td class='text-center'>{{ $cotacao->nome}}</td>
+                      <td class='text-center'>{{ $cotacao->categoria_evento_id}}</td>
+                      <td class='text-center'>{{ $cotacao->data_evento}}</td>
+                      <td class='text-center'>
+                        <div>
+                          <?php echo(str_replace("row#","row" + $cotacao->id,$buttonLixeira))?>
+                          <?php echo(str_replace("row#","row" + $cotacao->id, $buttonOlho))?>
+                          <?php echo(str_replace("row#","row" + $cotacao->id,$buttonEditar))?>
+                        </div>
+                      </td>
+                    </tr>
+                  </thead>
+                @endforeach
+              @endif
             </table>  
         </section>
     </div>
