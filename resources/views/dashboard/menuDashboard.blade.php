@@ -10,7 +10,7 @@
             </div>
             <div>
                 <a href='{{route('ambienteDashboard')}}'><button type="button" class="btn btn-primary">Ambiente</button></a>
-                <a href='{{route('orcamentosNovos')}}'><button type="button" class="btn btn-primary">Orçamentos</button></a>
+                <a href='{{route('orcamentosNovo')}}'><button type="button" class="btn btn-primary">Orçamentos</button></a>
             </div>
             <div>
             <a href={{ route ('curriculo.index')}}><button id="ultimo" type="button" class="btn btn-primary">Curriculos</button></a>
