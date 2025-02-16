@@ -141,5 +141,5 @@ function doc(){
         AddRegistPendentes(json.Pendentes);
     }
 }
-doc();
+
 DeletRegist();
