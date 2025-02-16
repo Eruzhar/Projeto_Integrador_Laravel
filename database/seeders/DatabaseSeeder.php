@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Http\Controllers\CotacaoController;
+use App\Models\Curriculo;
 use App\Models\User;
 use App\Models\Profissao;
 use App\Models\CategoriaBar;
@@ -128,6 +129,15 @@ class DatabaseSeeder extends Seeder
             'categoria_bar_id' => '1',
             'categoria_evento_id' => '1'
         ]);
+        Curriculo::factory()->create([
+            'nome' => 'João',
+            'arquivo' => 'Silva',
+            'informacoes' => '30',
+            'profissao_id' => '1'
+        ]);
+
+
+
 
     }
 }
