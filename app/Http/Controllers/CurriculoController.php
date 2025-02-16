@@ -13,10 +13,11 @@ class CurriculoController extends Controller
      */
     public function index()
     {
-        $curriculos = Curriculo::with('trabalho')->get();
-
+        $curriculos = Curriculo::all();
+        $profissoes = Profissao::all();
         return view('curriculo.index',[
-            'curriculos'=> $curriculos
+            'curriculos'=> $curriculos,
+            'profissoes'=> $profissoes
         ]);
     }
 

@@ -136,6 +136,7 @@ class DatabaseSeeder extends Seeder
             'profissao_id' => '1'
         ]);
 
+        
 
 
 
