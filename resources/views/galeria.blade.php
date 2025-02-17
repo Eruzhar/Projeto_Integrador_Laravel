@@ -1,4 +1,4 @@
-<x-layout title="Drink e Bares">
+<x-layout title="Drinks e Bares">
     @vite(['resources/css/galeria.css'])
     <x-header></x-header>
 
@@ -6,7 +6,9 @@
         <section class="drink-section">
             <h1>Drinks</h1>
             <div class="drink-grid">
-                <x-drink_card></x-drink_card>
+                @foreach($drinks as $drink)                
+                <x-drink_card titulo="{{ $drink->titulo }}" arquivo="{{ $drink->arquivo }}" descricao="{{ $drink->descricao }}"></x-drink_card>
+                @endforeach
                 {{-- <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>  --}}
             </div>
         </section>
