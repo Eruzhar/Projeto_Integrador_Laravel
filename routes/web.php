@@ -9,13 +9,17 @@ use App\Http\Controllers\CotacaoController;
 use App\Http\Controllers\StatusCotacaoController;
 use App\Http\Controllers\ProfissaoController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 
 Route::get('/', function () {
     return view('index');
 })->name('home');
 
 Route::get('/galeria',function (){
-    return view('galeria');
+    $drinks = Post::where('categoria_id', 2)->get();
+    return view('galeria',[
+        'drinks'=>$drinks,
+    ]);
 })->name('galeria');
 
 Route::get('/sobrenos',function (){
@@ -23,6 +27,7 @@ Route::get('/sobrenos',function (){
 })->name('sobrenos');
 
 Route::resource('curriculo', CurriculoController::class);
+Route::resource('cotacao',CotacaoController::class);
 //Route::resource('categoriabar', CategoriaBarController::class);
 //Route::resource('categoriaevento', CategoriaEventoController::class);
 //Route::resource('categoriapost', CategoriaPostController::class);

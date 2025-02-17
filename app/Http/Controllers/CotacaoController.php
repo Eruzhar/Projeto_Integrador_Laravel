@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cotacao;
 use App\Models\StatusCotacao;
-use App\Models\CategoriaEvento;
 
 class CotacaoController extends Controller
 {
@@ -64,7 +63,12 @@ class CotacaoController extends Controller
      */
     public function create()
     {
-        return view("cotacao.create");
+        $categorias_bar = CategoriaBar::all();
+        $categorias_evento = CategoriaEvento::all();
+        return view("cotacao.create",[            
+            'categorias_bar'=> $categorias_bar,
+            'categorias_evento'=> $categorias_evento,
+        ]);
     }
 
     /**
@@ -74,12 +78,12 @@ class CotacaoController extends Controller
     {
         request()->validate([
             "nome"=> "required",
-            "data_evento"=> "rerquered",
-            "telefone"=> "requered|min:11",
-            "email"=>"requered",
-            "localidade"=> "requered",
+            "data_evento"=> "required",
+            "telefone"=> "required|min:11",
+            "email"=>"required",
+            "localidade"=> "required",
             "observacoes"=>"required",
-            "status_cotacao_id"=> "required|exists:status_cotacao,id",
+            "qtd_convidados"=> "required|integer|min:0",
             "categoria_bar_id"=> "required|exists:categoria_bar,id",
             "categoria_evento_id"=> "required|exists:categoria_evento,id"
             ]);
@@ -92,11 +96,18 @@ class CotacaoController extends Controller
         $cotacao->email = $request->input("email");
         $cotacao->localidade = $request->input("localidade");
         $cotacao->observacoes = $request->input("observacoes");
-        $cotacao->status_cotacao_id = $request->input("status_cotacao_id");
+        $cotacao->qtd_convidados = $request->input("qtd_convidados");
+        $cotacao->status_cotacao_id = 1;
         $cotacao->categoria_evento_id = $request->input("categoria_evento_id");
         $cotacao->categoria_bar_id = $request->input("categoria_bar_id");
         $cotacao->save();
-        return view("cotacao.index");
+
+        $categorias_bar = CategoriaBar::all();
+        $categorias_evento = CategoriaEvento::all();
+        return view("cotacao.create",[
+            'categorias_bar'=> $categorias_bar,
+            'categorias_evento'=> $categorias_evento,
+        ])->with('message', 'Orçamento cadastrado com sucesso!');
     }
 
     /**

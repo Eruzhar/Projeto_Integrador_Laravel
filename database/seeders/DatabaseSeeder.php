@@ -11,6 +11,7 @@ use App\Models\CategoriaEvento;
 use App\Models\CategoriaPost;
 use App\Models\StatusCotacao;
 use App\Models\Cotacao;
+use App\Models\Post;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -138,6 +139,21 @@ class DatabaseSeeder extends Seeder
 
         
 
+        Post::factory()->create([            
+            'titulo' => '2 Limões',
+            'descricao' => 'Base de limão siciliano, limão tahiti, melaço de cana e cachaça.',
+            'visibilidade'=> true,
+            'arquivo' => 'drink1.jpg',
+            'categoria_id' => 2,
+        ]);
+
+        Post::factory()->create([
+            'titulo' => '43 Sour ',
+            'descricao' => 'Base de licor 43 e sumo de limão siciliano.',
+            'visibilidade'=> true,
+            'arquivo' => 'drink2.jpg',
+            'categoria_id' => 2,
+        ]);
 
 
     }

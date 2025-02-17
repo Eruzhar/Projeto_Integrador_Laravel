@@ -8,6 +8,10 @@
     --second-color: orange;
     --text-color: white;
 }
+footer{
+    background-color: var(--main-color);
+    color: var(--text-color);    
+}
 .footer-nav{    
     display: flex;   
     justify-content: center; 
@@ -40,7 +44,8 @@
     justify-content: start;
     align-items: start;
     gap: 5px;
-    grid-template-areas: 'c1 c2 c3 c4 c5' 'c1 c2 c3 c4 c5' ;
+    /*grid-template-areas: 'c1 c2 c3 c4 c5' 'c1 c2 c3 c4 c5' ;*/
+    grid-template-areas: 'c1 c2 c3' 'c1 c2 c3' ;
 }
 .copyright{
     text-align: center;
