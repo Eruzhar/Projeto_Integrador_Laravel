@@ -2,10 +2,10 @@
     @vite(['resources/css/cotacao.create.css'])
     <x-header></x-header>
     
-    <main>
+    <main class="d-flex flex-column justify-content-center">
         <h1 class="main-title">Realize seu evento conosco:</h1>        
         <section  class="formulario-container">
-           <form action="" class="formulario" method="post" id="cotacao_form">
+           <form action="{{ route('cotacao.store') }}" class="formulario" method="post" id="cotacao_form">
                 @csrf
                 <div class="cotacao_nome">
                     <label for="nome" class="form-label">Nome do Cotador</label>

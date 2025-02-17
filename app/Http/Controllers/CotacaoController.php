@@ -103,7 +103,13 @@ class CotacaoController extends Controller
         $cotacao->categoria_evento_id = $request->input("categoria_evento_id");
         $cotacao->categoria_bar_id = $request->input("categoria_bar_id");
         $cotacao->save();
-        return view("cotacao.index");
+
+        $categorias_bar = CategoriaBar::all();
+        $categorias_evento = CategoriaEvento::all();
+        return view("cotacao.create",[
+            'categorias_bar'=> $categorias_bar,
+            'categorias_evento'=> $categorias_evento,
+        ])->with('message', 'Orçamento cadastrado com sucesso!');
     }
 
     /**
