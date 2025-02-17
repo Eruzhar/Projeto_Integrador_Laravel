@@ -13,13 +13,13 @@ class Cotacao extends Model
     use HasFactory;
     protected $table = 'cotacao';
 
-    public function categoria_status(){
-        return $this->hasOne(StatusCotacao::class, 'status_cotacao_id');
+    public function cotacao_status(){
+        return $this->hasOne(StatusCotacao::class, 'id');
     }
     public function categoria_bar(){
-        return $this->hasOne(CategoriaBar::class, 'categoria_bar_id');
+        return $this->hasOne(CategoriaBar::class, 'id');
     }
-    public function categoria_Evento(){
-        return $this->hasOne(CategoriaEvento::class, 'categoria_evento_id');
+    public function categoria_evento(){
+        return $this->hasOne(CategoriaEvento::class, 'id');
     }
 }

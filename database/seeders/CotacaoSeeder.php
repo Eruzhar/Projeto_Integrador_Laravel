@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Cotacao;
+use App\Models\Curriculo;
 
 class CotacaoSeeder extends Seeder
 {
@@ -13,6 +14,28 @@ class CotacaoSeeder extends Seeder
      */
     public function run(): void
     {
+        
+        Curriculo::factory()->create([
+            'nome' => 'João',
+            'arquivo' => 'Silva',
+            'informacoes' => '30',
+            'profissao_id' => '1'
+        ]);
+        
+        Curriculo::factory()->create([
+            'nome' => 'João',
+            'arquivo' => 'Silva',
+            'informacoes' => '30',
+            'profissao_id' => '1'
+        ]);
+        
+        Curriculo::factory()->create([
+            'nome' => 'João',
+            'arquivo' => 'Silva',
+            'informacoes' => '30',
+            'profissao_id' => '1'
+        ]);
+
         Cotacao::factory()->create([
             'nome'=> 'João',
             'data_evento' => now(),

@@ -11,7 +11,7 @@ class StatusCotacao extends Model
     use HasFactory;
     protected $table = 'status_cotacao';
 
-    public function cotacao_status(){
-        return $this->belongsTo(Cotacao::class);
+    public function cotacao(){
+        return $this->belongsTo(Cotacao::class, 'id');
     }
 }

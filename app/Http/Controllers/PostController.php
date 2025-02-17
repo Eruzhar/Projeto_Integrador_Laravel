@@ -35,10 +35,18 @@ class PostController extends Controller
             "posts" => $posts
         ]);
     }
-    public function indexGaleria()
+    public function indexGaleria(Request $request)
     {
+
         $categoria_id = $this->getCategoria_id("galeria");
-        $posts = $this->getIndex($categoria_id);
+
+        if(isset($_GET['ordem'])){
+            $posts = Post::all()->sortBy(strtolower($_GET['ordem']));
+        }else{
+            $posts = $this->getIndex($categoria_id);
+        }
+        
+       
         return view("dashboard.galeriaDashboard", [
             "posts" => $posts
         ]);

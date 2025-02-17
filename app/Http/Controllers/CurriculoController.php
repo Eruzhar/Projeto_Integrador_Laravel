@@ -112,6 +112,6 @@ class CurriculoController extends Controller
     {
         $curriculo = Curriculo::findOrFail($id);
         $curriculo->delete();
-        return view("curriculo.index"); 
+        return redirect()->to(url()->previous());
     }
 }

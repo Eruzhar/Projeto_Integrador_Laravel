@@ -1,0 +1,4 @@
+-Tarefas relacionadas a x item:
+    ✔ Tarefa 1 @done(25-02-17 13:53)
+    ☐ Tarefa 2 @started(25-02-17 13:53)
+    ✘ Tarefa 3 @started(25-02-17 13:53) @cancelled(25-02-17 13:53) @wasted(26s)

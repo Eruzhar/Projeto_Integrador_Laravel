@@ -36,6 +36,7 @@ Route::get('/dashboard',function (){return view('dashboard.menuDashboard');})->n
 Route::get('/dashboard/login',function (){    return view('dashboard.login');})->name('login');
 
 //Orçamentos
+Route::delete('/dashboard/orcamento/{id}/destroy', [CotacaoController::class, 'destroy'])->name('cotacao.destroy');
 
 //Novos
 Route::get('/dashboard/orcamento/novo',[CotacaoController::class, 'indexNovo'])->name('orcamentosNovo');
@@ -78,4 +79,5 @@ Route::put('/post/update', [PostController::class, 'update'])->name('post.update
 
 
 
-
+Route::delete('/dashboard/curriculo/{id}/destroy', [CurriculoController::class, 'destroy'])->name('curriculo.destroy');
+Route::put('/dashboard/orcamento/{id}/update', [CotacaoController::class, 'update'])->name('cotacao.update');

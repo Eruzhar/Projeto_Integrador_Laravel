@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cotacao;
 use App\Models\StatusCotacao;
+use App\Models\CategoriaEvento;
 
 class CotacaoController extends Controller
 {
@@ -125,39 +126,26 @@ class CotacaoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        request()->validate([
-            "nome"=> "required",
-            "data_evento"=> "rerquered",
-            "telefone"=> "requered|min:11",
-            "email"=>"requered",
-            "localidade"=> "requered",
-            "observacoes"=>"required",
-            "status_cotacao_id"=> "required|exists:,id",
-            "categoria_bar_id"=> "required|exists:,id",
-            "categoria_evento_id"=> "required|exists:,id"
-            ]);
         $cotacao = Cotacao::findOrFail($id);
+        if(isset($request["Pendente"])){
+            $cotacao->status_cotacao_id = 2;
+            $cotacao->update();
+        }
+        if(isset($request["Concluido"])){
+            $cotacao->status_cotacao_id = 3;
+            $cotacao->update();
+        }
 
-        $cotacao->nome = $request->input("nome");
-        $cotacao->data_evento = $request->input("data_evento");
-        $cotacao->telefone = $request->input("telefone");
-        $cotacao->email = $request->input("email");
-        $cotacao->localidade = $request->input("localidade");
-        $cotacao->observacoes = $request->input("observacoes");
-        $cotacao->status_cotacao_id = $request->input("status_cotacao_id");
-        $cotacao->categoria_evento_id = $request->input("categoria_evento_id");
-        $cotacao->categoria_bar_id = $request->input("categoria_bar_id");
-        $cotacao->update();
-        return view("cotacao.index");
+        return redirect()->to(url()->previous());
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id, Request $request)
     {
         $cotacao = Cotacao::findOrFail($id);
         $cotacao->delete();
-        return view("cotacao.index");
+        return redirect()->to(url()->previous());
     }
 }

@@ -11,7 +11,7 @@ class CategoriaEvento extends Model
     use HasFactory;
     protected $table = 'categoria_evento';
 
-    public function cotacao_evento(){
-        return $this->belongsTo(Cotacao::class);
+    public function cotacao(){
+        return $this->belongsTo(Cotacao::class, 'categoria_evento_id');
     }
 }
