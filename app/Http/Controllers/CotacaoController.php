@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cotacao;
 use App\Models\StatusCotacao;
+use App\Models\CategoriaBar;
+use App\Models\CategoriaEvento;
 
 class CotacaoController extends Controller
 {
@@ -63,7 +65,14 @@ class CotacaoController extends Controller
      */
     public function create()
     {
-        return view("cotacao.create");
+        $statusCotacao = StatusCotacao::all();
+        $categorias_bar = CategoriaBar::all();
+        $categorias_evento = CategoriaEvento::all();
+        return view("cotacao.create",[
+            'status_cotacoes' => $statusCotacao,
+            'categorias_bar'=> $categorias_bar,
+            'categorias_evento'=> $categorias_evento,
+        ]);
     }
 
     /**

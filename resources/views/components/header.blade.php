@@ -12,6 +12,6 @@
             <a href="https://www.instagram.com/clubebar/"><i class="bi bi-instagram"></i></a>
             <a href="https://br.linkedin.com/in/clube-bar-108939209"><i class="bi bi-linkedin"></i></a>
             {{--<button type="submit" class="reservar-button">Reservar</button>--}}
-            <a class="btn btn-primary botao-custom" id="reservar-button" href="" role="button">Reservar</a>
+            <a class="btn btn-primary botao-custom" id="reservar-button" href="{{ route('cotacao.create') }}" role="button">Orçamento</a>
         </div>
 </header>
