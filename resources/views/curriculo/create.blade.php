@@ -7,7 +7,7 @@
             <h1>Trabalhe Conosco</h1>
         </section>
         <section  class="formulario-container">
-           <form action="{{ route('curriculo.store') }}" class="formulario" method="post" id="my_form" enctype="multipart/form-data">
+           <form action="{{ route('curriculo.store') }}" class="formulario d-grid" method="post" id="my_form" enctype="multipart/form-data">
                 @csrf
                 <div class="formName">
                     <label for="nome" class="form-label">Nome Completo</label>
