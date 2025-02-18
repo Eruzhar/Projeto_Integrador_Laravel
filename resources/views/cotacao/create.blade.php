@@ -3,9 +3,9 @@
     <x-header></x-header>
     
     <main class="d-flex flex-column justify-content-center">
-        <h1 class="main-title">Realize seu evento conosco:</h1>        
+        <h1 class="main-title justify-content-center">Realize seu evento conosco:</h1>        
         <section  class="formulario-container">
-           <form action="{{ route('cotacao.store') }}" class="formulario" method="post" id="cotacao_form">
+           <form action="{{ route('cotacao.store') }}" class="formulario d-grid" method="post" id="cotacao_form">
                 @csrf
                 <div class="cotacao_nome">
                     <label for="nome" class="form-label">Nome do Cotador</label>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="cotacao_telefone">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Formato: (11) 99999-9999" required>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Formato: (11) 99999-9999" required>
                 </div>
                 <div class="cotacao_email">
                     <label for="email" class="form-label">Email</label>
@@ -39,14 +39,22 @@
                     placeholder="Observações"></textarea>
                 </div>
                 <select name="categoria_bar_id" id="" class="categoria_bar">
+                    @if(isset($categorias_bar))
                     @foreach($categorias_bar as $categoria_bar)
                     <option value="{{$categoria_bar->id}}" href="#">{{$categoria_bar->nome}}</option>
-                    @endforeach  
+                    @endforeach
+                    @else
+                    <option value="">Nenhuma categoria cadastrada.</option>
+                    @endif
                 </select>
                 <select name="categoria_evento_id" id="" class="categoria_evento">
+                    @if(isset($categorias_evento))    
                     @foreach($categorias_evento as $categoria_evento)
                     <option value="{{$categoria_evento->id}}" href="#">{{$categoria_evento->nome}}</option>
                     @endforeach  
+                    @else
+                    <option value="">Nenhuma categoria cadastrada.</option>
+                    @endif
                 </select>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg botao-custom" id="form-button">Enviar</button>

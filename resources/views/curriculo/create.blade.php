@@ -16,9 +16,13 @@
                 </div>
                 <select name="profissao_id" id="" class="form-select">
                     <option value="">Selecione a vaga</option>
+                    @if(isset($profissoes))
                     @foreach($profissoes as $profissao)
                     <option value="{{$profissao->id}}" href="#">{{$profissao->nome}}</></option>
-                    @endforeach                     
+                    @endforeach     
+                    @else
+                    <option value="">Nenhuma profissão cadastrada.</option>       
+                    @endif         
                 </select>                
                 <div class="mb-3 curriculo">
                     <label for="formFile" class="form-label">Currículo</label>
