@@ -8,8 +8,8 @@
             <div class="drink-grid">                
                 @if(isset($drinks))
                     @foreach($drinks as $drink)                
-                    {{-- <x-drink_card titulo="{{ $drink->titulo }}" arquivo="{{ $drink->arquivo }}" descricao="{{ $drink->descricao }}"></x-drink_card>--}}
-                    <x-drink_card titulo="{{ $drink->titulo }}" arquivo="drink 1.jpg" descricao="{{ $drink->descricao }}"></x-drink_card>
+                    <x-drink_card titulo="{{ $drink->titulo }}" arquivo="{{ $drink->arquivo }}" descricao="{{ $drink->descricao }}"></x-drink_card>
+                    {{-- <x-drink_card titulo="{{ $drink->titulo }}" arquivo="drink 1.jpg" descricao="{{ $drink->descricao }}"></x-drink_card>--}}
                     @endforeach
                 @else
                     <x-drink_card></x-drink_card>

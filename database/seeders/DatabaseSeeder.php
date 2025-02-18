@@ -38,13 +38,13 @@ class DatabaseSeeder extends Seeder
                 'categoria_bar_id' => fake()->numberBetween(1,3),
                 'categoria_evento_id' => fake()->numberBetween(1,3)
             ]);
-            Post::factory()->create([            
+            /*Post::factory()->create([            
                 'titulo' => fake()->title(),
                 'descricao' => fake()->text(),
                 'visibilidade'=> fake()->boolean(),
                 'arquivo' => fake()->text(),
                 'categoria_id' => fake()->numberBetween(1,3)
-            ]);
+            ]);*/
             Profissao::factory()->create([
                 'nome' => fake()->jobTitle(),
                 'descricao' => fake()->text()
