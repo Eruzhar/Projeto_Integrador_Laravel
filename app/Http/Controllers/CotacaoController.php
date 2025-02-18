@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cotacao;
 use App\Models\StatusCotacao;
+use App\Models\CategoriaBar;
+use App\Models\CategoriaEvento;
 
 class CotacaoController extends Controller
 {
@@ -126,9 +128,13 @@ class CotacaoController extends Controller
      */
     public function edit(string $id)
     {
+        $categorias_bar = CategoriaBar::all();
+        $categorias_evento = CategoriaEvento::all();
         $cotacao = Cotacao::findOrFail($id);
-        return view("cotacao.edit", [
-            "cotacao"=> $cotacao
+        return view("dashboard.orcamentos.editarOrcamento", [
+            "cotacao"=> $cotacao,
+            'categorias_bar'=> $categorias_bar,
+            'categorias_evento'=> $categorias_evento,
         ]);
     }
 

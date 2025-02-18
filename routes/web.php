@@ -27,7 +27,7 @@ Route::get('/sobrenos',function (){
 })->name('sobrenos');
 
 Route::resource('curriculo', CurriculoController::class);
-Route::resource('cotacao',CotacaoController::class);
+//Route::resource('cotacao',CotacaoController::class);
 //Route::resource('categoriabar', CategoriaBarController::class);
 //Route::resource('categoriaevento', CategoriaEventoController::class);
 //Route::resource('categoriapost', CategoriaPostController::class);
@@ -40,8 +40,20 @@ Route::get('/dashboard',function (){return view('dashboard.menuDashboard');})->n
 
 Route::get('/dashboard/login',function (){    return view('dashboard.login');})->name('login');
 
+
+Route::delete('/dashboard/categoria/{id}/destroy', [ProfissaoController::class, 'destroy'])->name('profissao.destroy');
+Route::get('/dashboard/categoria/{id}/edit',[ProfissaoController::class, 'edit'])->name('profissao.edit');
+Route::put('/dashboard/categoria/{id}/update', [ProfissaoController::class, 'update'])->name('profissao.update');
+Route::get('/dashboard/categoria',[ProfissaoController::class, 'index'])->name('profissao.index');
+Route::get('/dashboard/categoria/novo',function (){    return view('profissao.novo');})->name('profissao.novo');
+Route::post('/dashboard/categoria/store',[ProfissaoController::class, 'store'])->name('profissao.store');
+
+
+
 //Orçamentos
 Route::delete('/dashboard/orcamento/{id}/destroy', [CotacaoController::class, 'destroy'])->name('cotacao.destroy');
+Route::get('/dashboard/orcamento/{id}/edit',[CotacaoController::class, 'edit'])->name('cotacao.edit');
+Route::put('/dashboard/orcamento/update', [CotacaoController::class, 'update'])->name('cotacao.update');
 
 //Novos
 Route::get('/dashboard/orcamento/novo',[CotacaoController::class, 'indexNovo'])->name('orcamentosNovo');

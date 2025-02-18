@@ -4,18 +4,20 @@ Lista de pendencias
 
         buscar pelo texto
         filtar
-        ordenar'
+        ordenar
         
         subir imagem
         descer imagem
         curriculos
             
             
-            baixar curriculo
-        cotações
-            
-            pagina de edição
+            baixar curriculo    
         profissões
+            cadastra
+            editar
+            apagar
+            
         login
+        trocar o flooter
 
         ++ deixar um unico arquivo dashboard e add

@@ -41,8 +41,10 @@ class ProfissaoController extends Controller
         $profissao->nome = $request->input('nome');
         $profissao->descricao = $request->input('descricao');
         $profissao->save();
-
-        return view('profissao.create');
+        $profissoes = Profissao::all();
+        return view('profissao.index',[
+            'profissoes'=> $profissoes
+        ]);
     }
 
     /**
@@ -61,9 +63,9 @@ class ProfissaoController extends Controller
      */
     public function edit(string $id)
     {
-        $profisoes = Profissao::findOrFail($id);
+        $profisao = Profissao::findOrFail($id);
         return view('profissao.edit',[
-            'profissoes'=> $profisoes
+            'profissao'=> $profisao
             ]);
     }
 
@@ -82,8 +84,10 @@ class ProfissaoController extends Controller
         $profissao->nome = $request->input('nome');
         $profissao->descricao = $request->input('descricao');
         $profissao->update();
-        
-        return view('profissao.create');
+        $profissoes = Profissao::all();
+        return view('profissao.index',[
+            'profissoes'=> $profissoes
+        ]);
     }
 
     /**
@@ -93,6 +97,9 @@ class ProfissaoController extends Controller
     {
         $profissao = Profissao::findOrFail($id);
         $profissao->delete();
-        return view('profissao.index');
+        $profissoes = Profissao::all();
+        return view('profissao.index',[
+            'profissoes'=> $profissoes
+        ]);
     }
 }
