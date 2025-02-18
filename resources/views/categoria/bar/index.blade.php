@@ -16,8 +16,14 @@
       </a>
       <br />
       <ul>
+      <li>
+          <a href='{{ route( 'categoria.bar.index') }}'>Bares</a>
+        </li>
         <li>
-          <a href='{{ route( 'profissao.index') }}'>Profissões</a>
+          <a href='{{ route( 'categoria.evento.index') }}'>Eventos</a>
+        </li>
+        <li>
+          <a href='{{ route( 'categoria.profissao.index') }}'>Profissões</a>
         </li>
      </ul>
     </div>
@@ -25,7 +31,7 @@
       <div class="Cabeçalho">
         <h1></h1>
         <h1>{{$tituloPagina}}</h1>
-        <a href='{{route('profissao.novo')}}'>
+        <a href='{{route('categoria.bar.novo')}}'>
           <x-button-novo descricao="Adicionar novo">
           </x-button-novo>
         </a>                
@@ -48,23 +54,23 @@
           <th scope='col' class='text-center'>Descrição</th>
           <th scope='col' class='text-center'>Ações</th>
           </thead>
-          @if(isset($profissoes))
-            @foreach ($profissoes as $profissao)
+          @if(isset($categoria_bares))
+            @foreach ($categoria_bares as $categoria_bar)
               <thead>
-                <tr id='id{{ $profissao->id }}'>
-                  <td scope='row' class='text-center'>{{ $profissao->id }}</td>
-                  <td class='text-center'>{{ $profissao->nome}}</td>
-                  <td class='text-center'>{{ $profissao->descricao}}</td>
+                <tr id='id{{ $categoria_bar->id }}'>
+                  <td scope='row' class='text-center'>{{ $categoria_bar->id }}</td>
+                  <td class='text-center'>{{ $categoria_bar->nome}}</td>
+                  <td class='text-center'>{{ $categoria_bar->descricao}}</td>
                   <td class='text-center'>
                     <div>
-                      <form action="{{ route('profissao.destroy', ['id'=>$profissao->id])}}" method="post" >
+                      <form action="{{ route('categoria.bar.destroy', ['id'=>$categoria_bar->id])}}" method="post" >
                         @csrf
                         @method("DELETE")
-                        <?php echo(str_replace("row#","row" . $profissao->id,$buttonLixeira))?>
+                        <?php echo(str_replace("row#","row" . $categoria_bar->id,$buttonLixeira))?>
                       </form>
-                      <form action="{{ route('profissao.edit', ['id'=>$profissao->id])}}" method="get" >
+                      <form action="{{ route('categoria.bar.edit', ['id'=>$categoria_bar->id])}}" method="get" >
                         @csrf
-                        <?php echo(str_replace("row#","row" . $profissao->id,$buttonEdit))?>
+                        <?php echo(str_replace("row#","row" . $categoria_bar->id,$buttonEdit))?>
                     </form>
                   </div>
                   </td>

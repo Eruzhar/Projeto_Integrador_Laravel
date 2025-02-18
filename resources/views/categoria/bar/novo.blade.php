@@ -4,7 +4,7 @@
 <div class="container">
         <h1>{{ $TituloPagina}}</h1>
 
-        <form action="{{ route('profissao.store') }}" method="post">
+        <form action="{{ route('categoria.bar.store') }}" method="post">
             @csrf
             <div class="form-group">
                 <label for="nome">Nome</label>
@@ -15,7 +15,7 @@
                 <label for="descricao">Descrição</label>
                 <textarea id="descricao" name="descricao" required placeholder="Descreva aqui..." value="@if(isset($profissao))<?php echo($profissao->nome)?> @endif"></textarea>
             </div>
-            <a href="/dashboard/categoria">
+            <a href="/dashboard/categoria/bar">
                 <x-button-voltar descricao="Voltar para categoria"></x-button-voltar>
             </a>
             <x-button-enviar descricao="Salvar"></x-button-enviar>
