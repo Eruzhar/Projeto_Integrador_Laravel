@@ -38,6 +38,10 @@ h1 {
     font-size: 3rem;
     padding:  0 20px;
 }
+.cardapio{
+    font-size: 2rem;
+    color: var(--second-color) !important;
+}
 .header-nav{    
     display: flex;   
     justify-content: center; 

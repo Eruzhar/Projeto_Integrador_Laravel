@@ -2,10 +2,10 @@
     @vite(['resources/css/header.css'])
         <a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="" class="logo"></a>
         <ul>
-            <li><a href="#" class="header-link">Cardápio</a></li>
-            <li><a href="#" class="header-link">Eventos</a></li>
+            <li><a href="{{ route('galeria') }}" class="header-link cardapio">Cardápio</a></li>
+            {{-- <li><a href="#" class="header-link">Eventos</a></li>
             <li><a href="#" class="header-link">Depoimentos</a></li>
-            <li><a href="#" class="header-link">Contato</a></li>
+            <li><a href="#" class="header-link">Contato</a></li>--}}
         </ul>
         <div class="header-nav" method="post">
             <a href="https://www.facebook.com/clubebarcoquetelaria/"><i class="bi bi-facebook"></i></a>
