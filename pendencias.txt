@@ -6,12 +6,6 @@ Lista de pendencias
         filtar
         ordenar
         
-        subir imagem
-        descer imagem
-        curriculos
-            
-            
-            baixar curriculo    
         login
         trocar o flooter + status de quantidades por item
 

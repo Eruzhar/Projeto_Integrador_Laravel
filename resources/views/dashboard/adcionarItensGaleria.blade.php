@@ -2,7 +2,7 @@
 
     <x-header-dashboard></x-header-dashboard>
     @if(isset($post))
-      <form action="{{ route('post.update', $post->id) }}" method="post">
+      <form action="{{ route('post.update', $post->id) }}" method="post" enctype="multipart/form-data">
       @csrf
       @method("PUT")
     @else

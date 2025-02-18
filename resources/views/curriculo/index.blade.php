@@ -69,7 +69,7 @@ $buttonBaixar = "<button type='button' class='btn btn-info' onclick='UpDateRegis
                                         @method("DELETE")
                                         <?php echo(str_replace("row#","row" . $curriculo->id,$buttonLixeira))?>
                                     </form>
-                                    <a href="#">
+                                    <a href={{asset("/storage/uploads/$curriculo->arquivo") }}>
                                         <?php echo(str_replace("row#","row" . $curriculo->id, $buttonBaixar))?>
                                     </a>
                                 </div>
