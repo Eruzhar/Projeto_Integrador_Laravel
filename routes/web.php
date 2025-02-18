@@ -26,8 +26,14 @@ Route::get('/sobrenos',function (){
     return view('sobrenos');
 })->name('sobrenos');
 
-Route::resource('curriculo', CurriculoController::class);
-Route::resource('cotacao',CotacaoController::class);
+Route::get('/curriculo',[CurriculoController::class,'create'])->name('curriculo.create');
+Route::post('/curriculo',[CurriculoController::class,'store'])->name('curriculo.store');
+
+Route::get('/orcamento', [CotacaoController::class,'create'])->name('cotacao.create');
+Route::post('/orcamento',[CotacaoController::class,'store'])->name('cotacao.store');
+
+//Route::resource('curriculo', CurriculoController::class);
+//Route::resource('cotacao',CotacaoController::class);
 //Route::resource('categoriabar', CategoriaBarController::class);
 //Route::resource('categoriaevento', CategoriaEventoController::class);
 //Route::resource('categoriapost', CategoriaPostController::class);

@@ -7,7 +7,7 @@
             <h1>Trabalhe Conosco</h1>
         </section>
         <section  class="formulario-container">
-           <form action="{{ route('curriculo.store') }}" class="formulario" method="post" id="my_form" enctype="multipart/form-data">
+           <form action="{{ route('curriculo.store') }}" class="formulario d-grid" method="post" id="my_form" enctype="multipart/form-data">
                 @csrf
                 <div class="formName">
                     <label for="nome" class="form-label">Nome Completo</label>
@@ -16,9 +16,13 @@
                 </div>
                 <select name="profissao_id" id="" class="form-select">
                     <option value="">Selecione a vaga</option>
+                    @if(isset($profissoes))
                     @foreach($profissoes as $profissao)
                     <option value="{{$profissao->id}}" href="#">{{$profissao->nome}}</></option>
-                    @endforeach                     
+                    @endforeach     
+                    @else
+                    <option value="">Nenhuma profissão cadastrada.</option>       
+                    @endif         
                 </select>                
                 <div class="mb-3 curriculo">
                     <label for="formFile" class="form-label">Currículo</label>
