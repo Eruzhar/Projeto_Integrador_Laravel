@@ -55,7 +55,7 @@ $buttonPendente= "<button type='submit' name='Pendente' value='Pendente' class='
                   <td class='text-center'>{{ $cotacao->telefone}}</td>
                   <td class='text-center'>{{ $cotacao->nome}}</td>
                   <td class='text-center'>{{ $cotacao->categoria_evento_id}}</td>
-                  <td class='text-center'>{{ $cotacao->data_evento}}</td>
+                  <td class='text-center'>{{ date_format(new DateTime($cotacao->data_evento),"d/m/Y")}}</td>
                   <td class='text-center'>
                     <div>
                       <form action="{{ route('cotacao.destroy', ['id'=>$cotacao->id])}}" method="post" >
