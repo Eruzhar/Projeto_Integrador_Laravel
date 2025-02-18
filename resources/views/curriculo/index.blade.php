@@ -82,6 +82,6 @@ $buttonBaixar = "<button type='button' class='btn btn-info' onclick='UpDateRegis
             </section>
         </div>
     </div>
-    <x-footer-dasboard></x-footer-dasboard>
+    <x-footer-dashboard></x-footer-dashboard>
     @vite(['resources/js/Buttons-Curriculos.js'])
 </x-layout-dashboard>

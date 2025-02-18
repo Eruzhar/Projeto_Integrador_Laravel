@@ -21,6 +21,6 @@ class footerDasboard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.footer-dasboard');
+        return view('components.footer-dashboard');
     }
 }

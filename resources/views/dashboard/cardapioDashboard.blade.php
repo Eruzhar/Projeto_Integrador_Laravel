@@ -75,6 +75,6 @@
             </div>
         @endif
     </section>
-    <x-footer-dasboard></x-footer-dasboard>
+    <x-footer-dashboard></x-footer-dashboard>
     @vite(['resources/js/Buttons-Dashbords.js'])
 </x-layout-dashboard>

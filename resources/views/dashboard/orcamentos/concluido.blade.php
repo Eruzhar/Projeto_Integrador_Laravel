@@ -82,6 +82,6 @@ $buttonPendente= "<button type='submit' name='Pendente' value='Pendente' class='
       </section>
     </div>  
   </div>
-  <x-footer-dasboard></x-footer-dasboard>
+  <x-footer-dashboard></x-footer-dashboard>
   @vite(['resources/js/Buttons-Orcamento.js'])
   </x-layout-dashboard>

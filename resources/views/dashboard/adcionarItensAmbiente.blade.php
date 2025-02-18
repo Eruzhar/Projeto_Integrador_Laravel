@@ -62,5 +62,5 @@
         </div>
       </div>
       </form>
-      <x-footer-dasboard></x-footer-dasboard>
+      <x-footer-dashboard></x-footer-dashboard>
 </x-layout-dashboard>
