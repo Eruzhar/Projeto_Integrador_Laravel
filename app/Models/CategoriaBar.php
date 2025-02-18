@@ -14,4 +14,5 @@ class CategoriaBar extends Model
     public function cotacao_bar(){
         return $this->belongsTo(Cotacao::class);
     }
+    protected $fillable = ["nome","descricao"];
 }

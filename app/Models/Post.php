@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
     protected $table = 'post';
 
-    //protected $fillable = ['titulo','descricao','visibilidade','arquivo', 'categoria_id'];
+    protected $fillable = ['titulo','descricao','visibilidade','arquivo', 'categoria_id'];
 
     public function categoria(){
         return $this->hasOne(CategoriaPost::class, 'categoria_id');

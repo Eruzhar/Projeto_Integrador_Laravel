@@ -22,4 +22,5 @@ class Cotacao extends Model
     public function categoria_evento(){
         return $this->hasOne(CategoriaEvento::class, 'id');
     }
+    protected $fillable = ["nome", 'data_evento', 'telefone', 'email', 'localidade', 'qtd_convidados', 'observacoes', 'status_cotacao_id', 'categoria_bar_id', 'categoria_evento_id'];
 }

@@ -14,4 +14,5 @@ class Profissao extends Model
     public function profissao(){
         return $this->belongsTo(Curriculo::class);
     }
+    protected $fillable = ["nome","descricao"];
 }

@@ -14,4 +14,5 @@ class StatusCotacao extends Model
     public function cotacao(){
         return $this->belongsTo(Cotacao::class, 'id');
     }
+    protected $fillable = ["nome","descricao"];
 }

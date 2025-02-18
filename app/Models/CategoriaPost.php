@@ -14,4 +14,5 @@ class CategoriaPost extends Model
     public function post(){
         return $this->belongsTo(Post::class);
     }
+    protected $fillable = ['nome', 'arquivo', 'informacoes', 'profissao_id'];
 }

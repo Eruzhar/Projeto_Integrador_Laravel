@@ -14,4 +14,5 @@ class CategoriaEvento extends Model
     public function cotacao(){
         return $this->belongsTo(Cotacao::class, 'categoria_evento_id');
     }
+    protected $fillable = ["nome","descricao"];
 }
