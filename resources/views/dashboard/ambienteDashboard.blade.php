@@ -36,7 +36,7 @@
             <div class="DashBoard">       
                 @foreach($posts as $post)
                     <div class='card' style='width: 22rem;' id='card{{$post->id}}'>
-                        <img class='card-img-top' src='{{ $post->arquivo }}' alt=''>
+                        <img class='card-img-top' src='{{ asset("/storage/uploads/$post->arquivo") }}' alt=''>
                         <div class='card-body'>
                             <h3 class='card-title'>Titulo:  {{$post->titulo}}</h3>
                             <h5 class='card-text'> Descrição: {{$post->descricao}}</h5>

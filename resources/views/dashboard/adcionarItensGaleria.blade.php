@@ -6,7 +6,7 @@
       @csrf
       @method("PUT")
     @else
-      <form action="{{ route('storeGaleria') }}" method="post">
+      <form action="{{ route('storeGaleria') }}" method="post" enctype="multipart/form-data">
       @csrf
     @endif      
       <h1>Upload de Imagens</h1>
