@@ -12,12 +12,7 @@ Lista de pendencias
             
             
             baixar curriculo    
-        profissões
-            cadastra
-            editar
-            apagar
-            
         login
-        trocar o flooter
+        trocar o flooter + status de quantidades por item
 
         ++ deixar um unico arquivo dashboard e add

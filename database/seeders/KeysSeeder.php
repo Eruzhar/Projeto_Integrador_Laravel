@@ -33,6 +33,7 @@ class KeysSeeder extends Seeder
             'nome'=> 'Garçom',
             'descricao' => 'GarçomDesc',
         ]);
+     
         StatusCotacao::factory()->create([
             'nome'=> 'Novo',
             'descricao' => 'NovoDesc',
@@ -45,6 +46,7 @@ class KeysSeeder extends Seeder
             'nome'=> 'Concluído',
             'descricao' => 'ConcluídoDesc',
         ]);
+     
         CategoriaBar::factory()->create([
             'nome'=> 'Bar 1',
             'descricao' => 'Bar 1Desc',
@@ -57,6 +59,7 @@ class KeysSeeder extends Seeder
             'nome'=> 'Bar 3',
             'descricao' => 'Bar 3Desc',
         ]);
+     
         CategoriaPost::factory()->create([
             'nome'=> 'ambiente',
             'descricao' => 'BarDesc',
@@ -69,6 +72,7 @@ class KeysSeeder extends Seeder
             'nome'=> 'cardapio',
             'descricao' => 'EventoDesc',
         ]);
+     
         CategoriaEvento::factory()->create([
             'nome'=> 'Evento 1',
             'descricao' => 'Evento 1Desc',

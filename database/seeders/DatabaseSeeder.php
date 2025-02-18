@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
         for($i = 0; $i <100; $i++) {
             Curriculo::factory()->create([
                 'nome' => fake()->name(),
-                'arquivo' => fake()->name(),
+                'arquivo' => fake()->text(),
                 'informacoes' => fake()->text(),
                 'profissao_id' => fake()->numberBetween(1,3)
             ]);
