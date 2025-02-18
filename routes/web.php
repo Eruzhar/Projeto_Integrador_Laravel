@@ -27,7 +27,7 @@ Route::get('/sobrenos',function (){
 })->name('sobrenos');
 
 Route::resource('curriculo', CurriculoController::class);
-//Route::resource('cotacao',CotacaoController::class);
+Route::resource('cotacao',CotacaoController::class);
 //Route::resource('categoriabar', CategoriaBarController::class);
 //Route::resource('categoriaevento', CategoriaEventoController::class);
 //Route::resource('categoriapost', CategoriaPostController::class);
