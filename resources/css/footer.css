@@ -45,7 +45,7 @@ footer{
     align-items: start;
     gap: 5px;
     /*grid-template-areas: 'c1 c2 c3 c4 c5' 'c1 c2 c3 c4 c5' ;*/
-    grid-template-areas: 'c1 c2 c3' 'c1 c2 c3' ;
+    grid-template-areas: 'c1 c2 c3';/* 'c1 c2 c3' ;*/
 }
 .copyright{
     text-align: center;

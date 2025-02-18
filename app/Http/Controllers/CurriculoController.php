@@ -46,12 +46,16 @@ class CurriculoController extends Controller
             'profissao_id'=> 'required|exists:profissao,id'
         ]);
 
-        // Salvar o arquivo na pasta 'uploads' dentro de 'storage/app/public'
-        $path = $request->file('arquivo')->store('curriculos', 'public');
-                
         $curriculo = new Curriculo();
-        $curriculo->nome = $request->input('nome');
-        $curriculo->arquivo = $path;
+
+        // Salvar o arquivo na pasta 'uploads' dentro de 'storage/app/public'
+        if($request->hasFile('arquivo')){
+            //$path = $request->file('arquivo')->store('curriculos', 'public');            
+            $path = uniqid() . '.' . $request->file('arquivo')->getClientOriginalExtension();
+            $request->file('arquivo')->storeAs('curriculos',$path,'public');
+            $curriculo->arquivo = $path;
+        }                        
+        $curriculo->nome = $request->input('nome');        
         $curriculo->informacoes = $request->input('informacoes');
         $curriculo->profissao_id = $request->input('profissao_id');
         //dd($curriculo);
