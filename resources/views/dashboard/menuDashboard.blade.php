@@ -18,4 +18,5 @@
             </div>
         </section>
     </div>
+    <x-footer-dasboard></x-footer-dasboard>
 </x-layout-dashboard>

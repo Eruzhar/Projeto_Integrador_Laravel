@@ -83,6 +83,7 @@ $buttonConcluido = "<button type='submit' name='Concluido'value='Concluido' clas
         </section>
     </div>
 </div>
+<x-footer-dasboard></x-footer-dasboard>
 @vite(['resources/js/Buttons-Orcamento.js'])
 
 </x-layout-dashboard> 

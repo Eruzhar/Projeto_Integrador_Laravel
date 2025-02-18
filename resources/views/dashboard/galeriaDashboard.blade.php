@@ -69,5 +69,6 @@
         @endforeach                     
         </div>
     </section>
+    <x-footer-dasboard></x-footer-dasboard>
     @vite(['resources/js/Buttons-Dashbords.js'])
 </x-layout-dashboard>

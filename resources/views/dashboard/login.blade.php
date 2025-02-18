@@ -40,4 +40,5 @@
             </div>
         </form>
     </section>
+    <x-footer></x-footer>
 </x-layout-dashboard>

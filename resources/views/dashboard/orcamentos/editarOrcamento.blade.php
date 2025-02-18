@@ -39,5 +39,5 @@
     <div class="alert alert-success" role="alert">{{ $message }}</div>        
     @endif        
 </div>
-    <x-footer></x-footer>
+<x-footer-dasboard></x-footer-dasboard>
 </x-layout-dashboard>
