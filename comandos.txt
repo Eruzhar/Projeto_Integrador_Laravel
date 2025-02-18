@@ -49,3 +49,4 @@ Comando: php artisan key:generate
 Descrição: Gera uma nova chave de aplicativo para o Laravel.
 
 
+php artisan storage:link

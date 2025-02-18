@@ -95,15 +95,19 @@ class PostController extends Controller
             'arquivo' =>'required',
         ]);
         $categorias = CategoriaPost::all();
-
+        $post = new Post();
+        if ($request->hasFile("arquivo")) {
+            $fileName = now()->timestamp . '.' . $request->file('arquivo')->getClientOriginalExtension();
+            $request->file("arquivo")->storeAs("uploads", $fileName, "public");
+            $post->arquivo = $fileName;
+        }
         foreach ($categorias as $categoria){
             if ($request->input('tag') == $categoria->nome){
-                $post = new Post();
-
+                
                 $post->titulo = $request->input('titulo');
                 $post->descricao = $request->input('descricao');
                 $post->visibilidade = true;
-                $post->arquivo = $request->input('arquivo');
+                //$post->arquivo = $request->input('arquivo');
                 $post->categoria_id = $categoria->id;
                 $post->save();                        
                 return redirect()->route('indexGaleria');

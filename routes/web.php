@@ -46,6 +46,9 @@ Route::get('/dashboard',function (){return view('dashboard.menuDashboard');})->n
 
 Route::get('/dashboard/login',function (){    return view('dashboard.login');})->name('login');
 
+
+Route::get('/dashboard/curriculo',[CurriculoController::class, 'index'])->name('curriculo.index');
+
 Route::delete('/dashboard/categoria/profissao/{id}/destroy', [ProfissaoController::class, 'destroy'])->name('categoria.profissao.destroy');
 Route::get('/dashboard/categoria/profissao/{id}/edit',[ProfissaoController::class, 'edit'])->name('categoria.profissao.edit');
 Route::put('/dashboard/categoria/profissao/{id}/update', [ProfissaoController::class, 'update'])->name('categoria.profissao.update');
