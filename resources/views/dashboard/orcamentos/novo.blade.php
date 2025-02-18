@@ -74,6 +74,11 @@ $buttonConcluido = "<button type='submit' name='Concluido'value='Concluido' clas
                       <form action="{{ route('cotacao.update', ['id'=>$cotacao->id])}}" method="post" >
                         @csrf
                         @method("PUT")
+                        <?php echo($buttonPendente) ?>
+                    </form>  
+                      <form action="{{ route('cotacao.update', ['id'=>$cotacao->id])}}" method="post" >
+                        @csrf
+                        @method("PUT")
                         <?php echo($buttonConcluido) ?>
                       </form>
                     </div>
