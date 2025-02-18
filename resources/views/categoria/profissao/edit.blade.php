@@ -3,7 +3,7 @@
     <x-header-dashboard></x-header-dashboard>
     <div class="container">
         <h1>{{ $TituloPagina}}</h1>
-        <form action="{{ route('profissao.update', $profissao->id) }}" method="post">
+        <form action="{{ route('categoria.profissao.update', $profissao->id) }}" method="post">
             @csrf
             @method("PUT")
             <label for="nome">Nome</label>

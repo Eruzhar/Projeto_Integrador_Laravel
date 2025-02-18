@@ -13,7 +13,7 @@ class ProfissaoController extends Controller
     public function index()
     {
         $profissoes = Profissao::all();
-        return view('profissao.index',[
+        return view('categoria.profissao.index',[
             'profissoes'=> $profissoes
         ]);
     }
@@ -23,7 +23,7 @@ class ProfissaoController extends Controller
      */
     public function create()
     {
-        return view('profissao.create');
+        return view('categoria.profissao.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class ProfissaoController extends Controller
         $profissao->descricao = $request->input('descricao');
         $profissao->save();
         $profissoes = Profissao::all();
-        return view('profissao.index',[
+        return view('categoria.profissao.index',[
             'profissoes'=> $profissoes
         ]);
     }
@@ -53,7 +53,7 @@ class ProfissaoController extends Controller
     public function show(string $id)
     {
         $profisoes = Profissao::findOrFail($id);
-        return view('profissao.show',[
+        return view('categoria.profissao.show',[
             'profissoes'=> $profisoes
             ]);
     }
@@ -64,7 +64,7 @@ class ProfissaoController extends Controller
     public function edit(string $id)
     {
         $profisao = Profissao::findOrFail($id);
-        return view('profissao.edit',[
+        return view('categoria.profissao.edit',[
             'profissao'=> $profisao
             ]);
     }
@@ -85,7 +85,7 @@ class ProfissaoController extends Controller
         $profissao->descricao = $request->input('descricao');
         $profissao->update();
         $profissoes = Profissao::all();
-        return view('profissao.index',[
+        return view('categoria.profissao.index',[
             'profissoes'=> $profissoes
         ]);
     }
@@ -98,7 +98,7 @@ class ProfissaoController extends Controller
         $profissao = Profissao::findOrFail($id);
         $profissao->delete();
         $profissoes = Profissao::all();
-        return view('profissao.index',[
+        return view('categoria.profissao.index',[
             'profissoes'=> $profissoes
         ]);
     }

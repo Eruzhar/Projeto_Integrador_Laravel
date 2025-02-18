@@ -12,9 +12,9 @@ class CategoriaBarController extends Controller
      */
     public function index()
     {
-        $cbs= CategoriaBar::all();
-        return view("categoriabar.index", [
-            "categoria_posts" => $cbs
+        $cbs = CategoriaBar ::all();
+        return view("categoria.bar.index", [
+            "categoria_bares" => $cbs
         ]);
     }
 
@@ -23,7 +23,7 @@ class CategoriaBarController extends Controller
      */
     public function create()
     {
-        return view("categoriabar.create");
+        return view("categoria.bar.create");
     }
 
     /**
@@ -32,16 +32,19 @@ class CategoriaBarController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' =>'required',
+            'nome' =>'required',
             'descricao' =>'required'
         ]);
 
         $cb = new CategoriaBar();
         
-        $cb->name = $request->input('name');
+        $cb->nome = $request->input('nome');
         $cb->descricao = $request->input('descricao');
         $cb->save();
-        return view('categoria_bar.create');
+        $cbs = CategoriaBar ::all();
+        return view("categoria.bar.index", [
+            "categoria_bares" => $cbs
+        ]);
     }
 
     /**
@@ -50,7 +53,7 @@ class CategoriaBarController extends Controller
     public function show(string $id)
     {
         $cb = CategoriaBar::findOrFail($id);
-        return view("categoria_bar.show", [
+        return view("categoria.bar.show", [
             "categoria_bar"=> $cb
         ]);
     }
@@ -60,9 +63,9 @@ class CategoriaBarController extends Controller
      */
     public function edit(string $id)
     {
-        $cbs = CategoriaBar::findOrFail($id);
-        return view("categoria_bar.edit", [
-            "categoria_bar"=> $cbs
+        $cb = CategoriaBar::findOrFail($id);
+        return view("categoria.bar.edit", [
+            "categoria_bar"=> $cb
         ]);
     }
 
@@ -72,16 +75,19 @@ class CategoriaBarController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' =>'required',
+            'nome' =>'required',
             'descricao' =>'required'
         ]);
 
         $cb = CategoriaBar::findOrFail($id);
         
-        $cb->name = $request->input('name');
+        $cb->nome = $request->input('nome');
         $cb->descricao = $request->input('descricao');
         $cb->update();
-        return view('categoria_bar.index');
+        $cbs = CategoriaBar ::all();
+        return view("categoria.bar.index", [
+            "categoria_bares" => $cbs
+        ]);
     }
 
     /**
@@ -89,8 +95,11 @@ class CategoriaBarController extends Controller
      */
     public function destroy(string $id)
     {
-        $cbs = CategoriaBar::findOrFail($id);
-        $cbs->delete();
-        return view("categoriabar.index");
+        $cb = CategoriaBar::findOrFail($id);
+        $cb->delete();
+        $cbs = CategoriaBar ::all();
+        return view("categoria.bar.index", [
+            "categoria_bares" => $cbs
+        ]);
     }
 }

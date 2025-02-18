@@ -14,7 +14,7 @@
             </div>
             <div>
                 <a href={{ route ('curriculo.index')}}><button type="button" class="btn btn-primary">Curriculos</button></a>
-                <a href='{{route('profissao.index')}}'><button type="button" class="btn btn-primary">Profissões</button></a>
+                <a href='{{route('categoria.profissao.index')}}'><button type="button" class="btn btn-primary">Categorias</button></a>
             </div>
         </section>
     </div>

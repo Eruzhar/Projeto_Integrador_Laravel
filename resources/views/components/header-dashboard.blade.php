@@ -7,7 +7,7 @@
             <li><a href="{{ route( 'ambienteDashboard') }}" class="header-link">Ambientes</a></li>
             <li><a href="{{ route( 'orcamentosNovo') }}" class="header-link">Orçamentos</a></li>
             <li><a href="{{ route( 'curriculo.index') }}" class="header-link">Currículos</a></li>
-            <li><a href='{{route('profissao.index')}}'  class="header-link">Profissões</a></li>
+            <li><a href='{{route('categoria.profissao.index')}}'  class="header-link">Categorias</a></li>
         </ul>
         <div class="header-nav" method="post">
             <a href="https://www.facebook.com/clubebarcoquetelaria/"><i class="bi bi-facebook"></i></a>

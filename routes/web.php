@@ -40,14 +40,28 @@ Route::get('/dashboard',function (){return view('dashboard.menuDashboard');})->n
 
 Route::get('/dashboard/login',function (){    return view('dashboard.login');})->name('login');
 
+Route::delete('/dashboard/categoria/profissao/{id}/destroy', [ProfissaoController::class, 'destroy'])->name('categoria.profissao.destroy');
+Route::get('/dashboard/categoria/profissao/{id}/edit',[ProfissaoController::class, 'edit'])->name('categoria.profissao.edit');
+Route::put('/dashboard/categoria/profissao/{id}/update', [ProfissaoController::class, 'update'])->name('categoria.profissao.update');
+Route::get('/dashboard/categoria/profissao',[ProfissaoController::class, 'index'])->name('categoria.profissao.index');
+Route::get('/dashboard/categoria/profissao/novo',function (){    return view('categoria.profissao.novo');})->name('categoria.profissao.novo');
+Route::post('/dashboard/categoria/profissao/store',[ProfissaoController::class, 'store'])->name('categoria.profissao.store');
 
-Route::delete('/dashboard/categoria/{id}/destroy', [ProfissaoController::class, 'destroy'])->name('profissao.destroy');
-Route::get('/dashboard/categoria/{id}/edit',[ProfissaoController::class, 'edit'])->name('profissao.edit');
-Route::put('/dashboard/categoria/{id}/update', [ProfissaoController::class, 'update'])->name('profissao.update');
-Route::get('/dashboard/categoria',[ProfissaoController::class, 'index'])->name('profissao.index');
-Route::get('/dashboard/categoria/novo',function (){    return view('profissao.novo');})->name('profissao.novo');
-Route::post('/dashboard/categoria/store',[ProfissaoController::class, 'store'])->name('profissao.store');
 
+
+Route::delete('/dashboard/categoria/bar/{id}/destroy', [CategoriaBarController::class, 'destroy'])->name('categoria.bar.destroy');
+Route::get('/dashboard/categoria/bar/{id}/edit',[CategoriaBarController::class, 'edit'])->name('categoria.bar.edit');
+Route::put('/dashboard/categoria/bar/{id}/update', [CategoriaBarController::class, 'update'])->name('categoria.bar.update');
+Route::get('/dashboard/categoria/bar',[CategoriaBarController::class, 'index'])->name('categoria.bar.index');
+Route::get('/dashboard/categoria/bar/novo',function (){    return view('categoria.bar.novo');})->name('categoria.bar.novo');
+Route::post('/dashboard/categoria/bar/store',[CategoriaBarController::class, 'store'])->name('categoria.bar.store');
+
+Route::delete('/dashboard/categoria/evento/{id}/destroy', [CategoriaEventoController::class, 'destroy'])->name('categoria.evento.destroy');
+Route::get('/dashboard/categoria/evento/{id}/edit',[CategoriaEventoController::class, 'edit'])->name('categoria.evento.edit');
+Route::put('/dashboard/categoria/evento/{id}/update', [CategoriaEventoController::class, 'update'])->name('categoria.evento.update');
+Route::get('/dashboard/categoria/evento',[CategoriaEventoController::class, 'index'])->name('categoria.evento.index');
+Route::get('/dashboard/categoria/evento/novo',function (){    return view('categoria.evento.novo');})->name('categoria.evento.novo');
+Route::post('/dashboard/categoria/evento/store',[CategoriaEventoController::class, 'store'])->name('categoria.evento.store');
 
 
 //Orçamentos
