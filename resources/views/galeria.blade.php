@@ -5,10 +5,14 @@
     <main>
         <section class="drink-section">
             <h1>Drinks</h1>
-            <div class="drink-grid">
-                @foreach($drinks as $drink)                
-                <x-drink_card titulo="{{ $drink->titulo }}" arquivo="{{ $drink->arquivo }}" descricao="{{ $drink->descricao }}"></x-drink_card>
-                @endforeach
+            <div class="drink-grid">                
+                @if(isset($drinks))
+                    @foreach($drinks as $drink)                
+                    <x-drink_card titulo="{{ $drink->titulo }}" arquivo="{{ $drink->arquivo }}" descricao="{{ $drink->descricao }}"></x-drink_card>
+                    @endforeach
+                @else
+                    <x-drink_card></x-drink_card>
+                @endif
                 {{-- <a href=""><img src="https://placehold.co/255x216" alt="drinkimg"></a>  --}}
             </div>
         </section>
