@@ -1,7 +1,8 @@
-@props(['descricao'=>'nome'])
+@props(['descricao'=>'nome', 'metodo'=>'none'])
 <button
-    type="reset"
+    type="button"
     class="btn btn-primary"
+    onclick='{{ $metodo }}'
     data-bs-toggle="tooltip"
     data-bs-placement="top"
     data-bs-title="{{$descricao}}">
