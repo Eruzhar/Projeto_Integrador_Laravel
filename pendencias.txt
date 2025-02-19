@@ -3,10 +3,7 @@ Lista de pendencias
     --Diogo
 
         buscar pelo texto
-        filtar
-        ordenar
         
-        login
         trocar o flooter + status de quantidades por item
 
         ++ deixar um unico arquivo dashboard e add
