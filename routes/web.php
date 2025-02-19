@@ -80,15 +80,15 @@ Route::put('/dashboard/orcamento/update', [CotacaoController::class, 'update'])-
 
 //Novos
 Route::get('/dashboard/orcamento/novo',[CotacaoController::class, 'indexNovo'])->name('orcamentosNovo');
-Route::get('/index/novo',[CotacaoController::class, 'indexNovo'])->name('indexOrcamentosNovo');
+Route::get('/dashboard/orcamento/novo/index',[CotacaoController::class, 'indexNovo'])->name('indexOrcamentosNovo');
 
 //Pendentes
 Route::get('/dashboard/orcamento/pendente',[CotacaoController::class, 'indexPendente'])->name('orcamentosPendente');
-Route::get('/index/pendente',[CotacaoController::class, 'indexPendente'])->name('indexOrcamentosPendente');
+Route::get('/dashboard/orcamento/pendente/index',[CotacaoController::class, 'indexPendente'])->name('indexOrcamentosPendente');
 
 //Concluidos
 Route::get('/dashboard/orcamento/concluido',[CotacaoController::class, 'indexConcluido'])->name('orcamentosConcluido');
-Route::get('/index/concluido',[CotacaoController::class, 'indexConcluido'])->name('indexOrcamentosConcluido');
+Route::get('/dashboard/orcamento/concluido/index',[CotacaoController::class, 'indexConcluido'])->name('indexOrcamentosConcluido');
 
 
 
@@ -96,24 +96,23 @@ Route::get('/index/concluido',[CotacaoController::class, 'indexConcluido'])->nam
 Route::post('/dashboard/ambiente/store', [PostController::class, 'storeAmbiente'])->name('storeAmbiente');
 Route::get('/dashboard/ambiente',[PostController::class, 'indexAmbiente'])->name('ambienteDashboard');
 Route::get('/dashboard/ambiente/novo',function (){    return view('dashboard.adcionarItensAmbiente');})->name('ambienteNovo');
-Route::get('/post/{id}/editAmbiente', [PostController::class, 'editAmbiente'])->name('editAmbiente');
-Route::get('/indexAmbiente', [PostController::class, 'indexAmbiente'])->name('indexAmbiente');
+Route::get('/dashboard/ambiente/{id}/edit', [PostController::class, 'editAmbiente'])->name('editAmbiente');
+Route::get('/dashboard/ambiente/index', [PostController::class, 'indexAmbiente'])->name('indexAmbiente');
 
 //Cardapio
 Route::post('/dashboard/cardapio/store', [PostController::class, 'storeCardapio'])->name('storeCardapio');
 Route::get('/dashboard/cardapio',[PostController::class, 'indexCardapio'])->name('cardapioDashboard');
 Route::get('/dashboard/cardapio/novo',function (){    return view('dashboard.adcionarItensCardapio');})->name('cardapioNovo');
-Route::get('/post/{id}/editCardapio', [PostController::class, 'editCardapio'])->name('editCardapio');
-Route::get('/indexCardapio', [PostController::class, 'indexCardapio'])->name('indexCardapio');
+Route::get('/dashboard/cardapio/{id}/edit', [PostController::class, 'editCardapio'])->name('editCardapio');
+Route::get('/dashboard/cardapio/index', [PostController::class, 'indexCardapio'])->name('indexCardapio');
 
 //Galeria
 Route::post('/dashboard/galeria/store', [PostController::class, 'storeGaleria'])->name('storeGaleria');
 Route::get('/dashboard/galeria',[PostController::class, 'indexGaleria'])->name('galeriaDashboard');
 Route::get('/dashboard/galeria/novo',function (){    return view('dashboard.adcionarItensGaleria');})->name('galeriaNovo');
-Route::get('/post/{id}/editGaleria', [PostController::class, 'editGaleria'])->name('editGaleria');
-//Route::delete('/post/{id}/destroyGaleria', [PostController::class, 'destroyGaleria'])->name('destroyGaleria');
-Route::delete('/post/{id}/destroy', [PostController::class, 'destroy'])->name('post.destroy');
-Route::get('/indexGaleria', [PostController::class, 'indexGaleria'])->name('indexGaleria');
+Route::get('/dashboard/galeria/{id}/edit', [PostController::class, 'editGaleria'])->name('editGaleria');
+Route::delete('/dashboard/galeria{id}/destroy', [PostController::class, 'destroy'])->name('post.destroy');
+Route::get('/dashboard/galeria/index', [PostController::class, 'indexGaleria'])->name('indexGaleria');
 Route::put('/post/{id}/updateVisibilidade', [PostController::class, 'updateVisibilidade'])->name('updateVisibilidade');
 Route::put('/post/update', [PostController::class, 'update'])->name('post.update');
 
