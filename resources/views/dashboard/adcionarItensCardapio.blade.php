@@ -22,8 +22,7 @@
               name="arquivo"
               value="@if(isset($post))<?php echo($post->arquivo)?> @endif"
             />
-            <x-button-limpar descricao="Lipar imagem">
-                Metodo carregar imagem
+            <x-button-limpar descricao="Limpar imagem" metodo="window.location.reload(true)">
             </x-button-limpar>
           </div>
           <div class="form-Titulo">
@@ -40,15 +39,15 @@
           </div>
           <br />
           @if(isset($post))
-              <x-button-enviar descricao="Atualizar">
-              </x-button-enviar>
+              <x-button-salvar descricao="Atualizar">
+              </x-button-salvar>
           @else
-              <x-button-enviar descricao="Salvar">
-              </x-button-enviar>
+              <x-button-salvar descricao="Salvar">
+              </x-button-salvar>
           @endif
                               
-          <x-button-limpar descricao="Limpar formulário">
-            </x-button-limpar>
+          <x-button-limpar descricao="Limpar imagem" metodo="LimparFormulario()">
+          </x-button-limpar>
             <a
             href='{{ route( 'cardapioDashboard') }}'>
               <x-button-voltar descricao="Voltar">
