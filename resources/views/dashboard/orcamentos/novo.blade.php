@@ -46,6 +46,7 @@ $buttonConcluido = "<button type='submit' name='Concluido'value='Concluido' clas
             <th scope='col' class='text-center'>Contato</th>
             <th scope='col' class='text-center'>Nome</th>
             <th scope='col' class='text-center'>Evento</th>
+            <th scope='col' class='text-center'>Tema Bar</th>
             <th scope='col' class='text-center'>Data Evento</th>
             <th scope='col' class='text-center'>Acompanhemento</th>
           </thead>
@@ -56,9 +57,9 @@ $buttonConcluido = "<button type='submit' name='Concluido'value='Concluido' clas
                 <td scope='row' class='text-center'>{{ $cotacao->id }}</td>
                 <td class='text-center'>{{ date_format($cotacao->created_at,"d/m/Y")}}</td>
                 <td class='text-center'>{{ $cotacao->telefone}}</td>
-                
                 <td class='text-center'>{{ $cotacao->nome}}</td>
-                <td class='text-center'>{{$cotacao->status_cotacao_id}}</td>
+                <td class='text-center'>{{ $categorias_evento[$cotacao->categoria_evento_id-1]->nome}}</td>
+                  <td class='text-center'>{{ $categorias_bar[$cotacao->categoria_bar_id-1]->nome}}</td>
                 <td class='text-center'>{{ date_format(new DateTime($cotacao->data_evento),"d/m/Y")}}</td>
                   <td class='text-center'>
                     <div>
