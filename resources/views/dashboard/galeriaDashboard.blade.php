@@ -28,46 +28,48 @@
             </select>
             <x-button-enviar descricao="Filtrar"></x-button-enviar>
         </form>
-        <div class="DashBoard">       
-        @foreach($posts as $post)
-            <div class='card' style='width: 22rem;' id='card{{$post->id}}'>
-                <img class='card-img-top' src='{{ asset("/storage/uploads/$post->arquivo" ) }}' alt=''>
-                <div class='card-body'>
-                    <h3 class='card-title'>Titulo:  {{$post->titulo}}</h3>
-                    <h5 class='card-text'> Descrição: {{$post->descricao}}</h5>
-                    <h5 class='card-text'> Data criação: {{date_format($post->created_at,"d/m/Y")}}</h5>
-                    <div class='button'>
-                        <form action="{{ route('editGaleria' , ['id'=>$post->id]) }}"method="get" >
-                            <?php echo( str_replace( "#$#","row" . $post->id, $buttonEdit));?>
-                        </form>
-                        <form action="{{ route('post.destroy', ['id'=>$post->id])}}" method="post" >
-                            @csrf
-                            @method("DELETE")
-                            <?php echo( str_replace( "#$#","row" . $post->id,$buttonLixeira));?>
-                        </form>
-                        <?php $buttonVisivelNew = $buttonVisivel?>
-                        <?php $buttonOcultarNew = $buttonOcultar?>
-                        @if($post->visibilidade == 1)
-                            <form action="{{ route('updateVisibilidade', ['id'=>$post->id])  }}" method="post">
-                                @csrf
-                                @method("PUT")
-                                <?php str_replace( "#$#", $post->id,$buttonVisivelNew);?>
-                                <?php echo(str_replace("style='display:none;'", "style='display: inline;'", $buttonVisivelNew)) ?>
+        @if(isset($posts))
+            <div class="DashBoard">       
+            @foreach($posts as $post)
+                <div class='card' style='width: 22rem;' id='card{{$post->id}}'>
+                    <img class='card-img-top' src='{{ asset("/storage/uploads/$post->arquivo" ) }}' alt=''>
+                    <div class='card-body'>
+                        <h3 class='card-title'>Titulo:  {{$post->titulo}}</h3>
+                        <h5 class='card-text'> Descrição: {{$post->descricao}}</h5>
+                        <h5 class='card-text'> Data criação: {{date_format($post->created_at,"d/m/Y")}}</h5>
+                        <div class='button'>
+                            <form action="{{ route('editGaleria' , ['id'=>$post->id]) }}"method="get" >
+                                <?php echo( str_replace( "#$#","row" . $post->id, $buttonEdit));?>
                             </form>
-                        @endif
-                        @if($post->visibilidade == 0)
-                            <form action="{{ route('updateVisibilidade', ['id'=>$post->id])  }}" method="post">
+                            <form action="{{ route('post.destroy', ['id'=>$post->id])}}" method="post" >
                                 @csrf
-                                @method("PUT")
-                                <?php str_replace("#$#", $post->id, $buttonOcultarNew);?>
-                                <?php echo(str_replace("style='display:none;'", "style='display: inline;'",$buttonOcultarNew)) ?>
+                                @method("DELETE")
+                                <?php echo( str_replace( "#$#","row" . $post->id,$buttonLixeira));?>
                             </form>
-                        @endif
+                            <?php $buttonVisivelNew = $buttonVisivel?>
+                            <?php $buttonOcultarNew = $buttonOcultar?>
+                            @if($post->visibilidade == 1)
+                                <form action="{{ route('updateVisibilidade', ['id'=>$post->id])  }}" method="post">
+                                    @csrf
+                                    @method("PUT")
+                                    <?php str_replace( "#$#", $post->id,$buttonVisivelNew);?>
+                                    <?php echo(str_replace("style='display:none;'", "style='display: inline;'", $buttonVisivelNew)) ?>
+                                </form>
+                            @endif
+                            @if($post->visibilidade == 0)
+                                <form action="{{ route('updateVisibilidade', ['id'=>$post->id])  }}" method="post">
+                                    @csrf
+                                    @method("PUT")
+                                    <?php str_replace("#$#", $post->id, $buttonOcultarNew);?>
+                                    <?php echo(str_replace("style='display:none;'", "style='display: inline;'",$buttonOcultarNew)) ?>
+                                </form>
+                            @endif
+                        </div>
                     </div>
                 </div>
+            @endforeach                     
             </div>
-        @endforeach                     
-        </div>
+        @endif
     </section>
     <x-footer-dashboard></x-footer-dashboard>
     @vite(['resources/js/Buttons-Dashbords.js'])
