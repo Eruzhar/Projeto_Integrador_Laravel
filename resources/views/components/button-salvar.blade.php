@@ -1,7 +1,7 @@
 @props(['descricao'=>'nome'])
 <button
     type="submit"
-    class="btn btn-primary"
+    class="btn btn-Success"
     data-bs-toggle="tooltip"
     data-bs-placement="top"
     data-bs-title="{{ $descricao }}"

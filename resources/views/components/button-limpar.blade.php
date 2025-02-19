@@ -1,7 +1,7 @@
 @props(['descricao'=>'nome', 'metodo'=>'none'])
 <button
     type="button"
-    class="btn btn-primary"
+    class="btn btn-Warning"
     onclick='{{ $metodo }}'
     data-bs-toggle="tooltip"
     data-bs-placement="top"
