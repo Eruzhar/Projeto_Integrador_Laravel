@@ -16,9 +16,13 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/galeria',function (){
-    $drinks = Post::where('categoria_id', 2)->get();
+    $drinks = Post::where('categoria_id', 3)->get();
+    $bares = Post::where('categoria_id', 1)->get();
+    $eventos = Post::where('categoria_id', 2)->get();
     return view('galeria',[
         'drinks'=>$drinks,
+        'bares'=> $bares,
+        'eventos'=>$eventos,
     ]);
 })->name('galeria');
 

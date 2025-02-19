@@ -1,3 +1,11 @@
 .drink_card{
     border-color: orange !important;
 }
+.card-title{
+    /*font-size: 1.5rem;*/
+    color: var(--second-color);
+}
+.card-text{
+    /*font-size: 1.2rem;*/
+    color: var(--text-color);
+}

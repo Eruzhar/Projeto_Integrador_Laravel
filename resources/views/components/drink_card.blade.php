@@ -4,7 +4,7 @@
     {{-- <img src="{{asset('img/drinks/'.$arquivo)}}" alt="" class="card-img"> --}}
     <img src="{{ asset('/storage/uploads/'.$arquivo ) }}" alt="" class="card-img-top">    
     <div class="card-header">
-        <h1 class="card-title">{{ $titulo }}</h1>
-        <h2 class="card-text">{{ $descricao }}</h2>
+        <h6 class="card-title">{{ $titulo }}</h6>
+        <p class="card-text">{{ $descricao }}</p>
     </div>
 </div>

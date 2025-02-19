@@ -76,3 +76,12 @@ h1 {
     overflow-x: hidden; 
     margin: 2rem 0;
 }
+.event-section{
+    padding: 0 20px;
+}
+.event-grid{
+    display: flex;
+    gap: 10px;    
+    overflow-x: hidden; 
+    margin: 2rem 0;
+}

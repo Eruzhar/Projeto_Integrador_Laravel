@@ -67,7 +67,7 @@ $buttonBaixar = "<button type='button' class='btn btn-info' onclick='UpDateRegis
                                     <td scope='row' class='text-center'>{{ $curriculo->id }}</td>
                                     <td class='text-center'>{{ date_format($curriculo->created_at, "d/m/Y")}}</td>
                                     <td class='text-center'>{{$curriculo->nome}}</td>
-                                    <td class='text-center'>{{$profissoes[$curriculo->profissao_id]->nome}}</td>
+                                    <td class='text-center'>{{$profissoes[$curriculo->profissao_id-1]->nome}}</td>
                                     <td class='text-center'>{{ $curriculo->informacoes}}</td>
                                     <td class='text-center'>
                                         <div>
@@ -77,7 +77,7 @@ $buttonBaixar = "<button type='button' class='btn btn-info' onclick='UpDateRegis
                                                 @method("DELETE")
                                                 <?php        echo (str_replace("row#", "row" . $curriculo->id, $buttonLixeira))?>
                                             </form>
-                                            <a href={{asset("/storage/uploads/$curriculo->arquivo") }}>
+                                            <a href={{asset("/storage/curriculos/$curriculo->arquivo") }}>
                                                 <?php        echo (str_replace("row#", "row" . $curriculo->id, $buttonBaixar))?>
                                             </a>
                                         </div>

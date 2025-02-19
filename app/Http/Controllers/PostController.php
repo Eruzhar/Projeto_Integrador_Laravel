@@ -54,7 +54,7 @@ class PostController extends Controller
         }else{
             $posts = Post::all()->sortBy('titulo');
         }
-       
+        $posts = $this->getIndex($categoria_id);
         return view("dashboard.galeriaDashboard", [
             "posts" => $posts
         ]);
