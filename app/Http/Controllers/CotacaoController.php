@@ -15,33 +15,50 @@ class CotacaoController extends Controller
      */
     public function index()
     {
+        $categorias_evento = CategoriaEvento::all();
+        $categorias_bar = CategoriaBar::all();
         $cotacoes = Cotacao::with(["categoria_status","categoria_bar","categoria_Evento"])->get();
         return view("cotacao.index",[
-            "cotacoes"=> $cotacoes
+            "cotacoes" => $cotacoes,
+            "categorias_evento" => $categorias_evento,
+            "categorias_bar" => $categorias_bar
         ]);
     }
     public function indexConcluido()
     {
         $statusCotacao_id = $this->getStatusCotacao_id("Concluído");
         $cotacoes = $this->getIndex($statusCotacao_id);
+        $categorias_evento = CategoriaEvento::all();
+        $categorias_bar = CategoriaBar::all();
+        
         return view("dashboard.orcamentos.concluido", [
-            "cotacoes" => $cotacoes
+            "cotacoes" => $cotacoes,
+            "categorias_evento" => $categorias_evento,
+            "categorias_bar" => $categorias_bar
         ]);
     
     }public function indexPendente()
     {
         $statusCotacao_id = $this->getStatusCotacao_id("Pendente");
         $cotacoes = $this->getIndex($statusCotacao_id);
+        $categorias_evento = CategoriaEvento::all();
+        $categorias_bar = CategoriaBar::all();
         return view("dashboard.orcamentos.pendente", [
-            "cotacoes" => $cotacoes
+            "cotacoes" => $cotacoes,
+            "categorias_evento" => $categorias_evento,
+            "categorias_bar" => $categorias_bar
         ]);
     }
     public function indexNovo()
     {
         $statusCotacao_id = $this->getStatusCotacao_id("Novo");
+        $categorias_evento = CategoriaEvento::all();
+        $categorias_bar = CategoriaBar::all();
         $cotacoes = $this->getIndex($statusCotacao_id);
         return view("dashboard.orcamentos.novo", [
-            "cotacoes" => $cotacoes
+            "cotacoes" => $cotacoes,
+            "categorias_evento" => $categorias_evento,
+            "categorias_bar" => $categorias_bar
         ]);
     }
     
