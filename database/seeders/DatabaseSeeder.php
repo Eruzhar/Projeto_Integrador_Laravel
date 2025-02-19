@@ -33,31 +33,28 @@ class DatabaseSeeder extends Seeder
                 'email' => fake()->email(),
                 'localidade' => fake()->streetAddress(),
                 'observacoes' => fake()->text(),
-                'qtd_convidados' => fake()->numberBetween(0,50),
+                'qtd_convidados' => fake()->numberBetween(10,50),
                 'status_cotacao_id' => fake()->numberBetween(1,3),
                 'categoria_bar_id' => fake()->numberBetween(1,3),
                 'categoria_evento_id' => fake()->numberBetween(1,3)
             ]);
-            /*Post::factory()->create([            
+            Post::factory()->create([            
                 'titulo' => fake()->title(),
                 'descricao' => fake()->text(),
                 'visibilidade'=> fake()->boolean(),
                 'arquivo' => fake()->text(),
                 'categoria_id' => fake()->numberBetween(1,3)
-            ]);*/
+            ]);
             Profissao::factory()->create([
                 'nome' => fake()->jobTitle(),
                 'descricao' => fake()->text()
             ]);
         }
-        for($i = 0; $i <100; $i++) {
             Curriculo::factory()->create([
                 'nome' => fake()->name(),
                 'arquivo' => fake()->text(),
                 'informacoes' => fake()->text(),
                 'profissao_id' => fake()->numberBetween(1,3)
             ]);
-        }
-
     }
 }
