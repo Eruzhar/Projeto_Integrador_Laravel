@@ -36,7 +36,7 @@
           </x-button-novo>
         </a>                
       </div>
-      <div class="form-outline" data-mdb-input-init>
+      <div class="form-outline" data-mdb-input-init style='display:none;'>
         <input
           type="search"
           id="form1"

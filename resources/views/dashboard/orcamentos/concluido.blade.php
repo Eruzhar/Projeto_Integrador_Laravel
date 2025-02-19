@@ -27,7 +27,7 @@ $buttonPendente= "<button type='submit' name='Pendente' value='Pendente' class='
     </div>
     <div class="conteudo">
       <h1>Orçamentos Concluídos</h1>
-      <div class="form-outline" data-mdb-input-init>
+      <div class="form-outline" data-mdb-input-init style='display:none;'>
         <input
           type="search"
           id="form1"

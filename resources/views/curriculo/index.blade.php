@@ -47,7 +47,7 @@ $buttonBaixar = "<button type='button' class='btn btn-info' onclick='UpDateRegis
 
 
                 </div>
-                <input type="search" id="form1" class="form-control" placeholder="Buscar" aria-label="Search" />
+                <input type="search" id="form1" class="form-control" placeholder="Buscar" aria-label="Search" /style='display:none;'>
             </div>
             <br />
             <section class="Lista">
