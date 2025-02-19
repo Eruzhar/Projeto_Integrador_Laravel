@@ -13,8 +13,21 @@ class CurriculoController extends Controller
      */
     public function index()
     {
-        $curriculos = Curriculo::all();
         $profissoes = Profissao::all();
+        if(isset($_GET['ordem'])){
+            $curriculos = Curriculo::all()->sortBy(strtolower($_GET['ordem']));
+        }else{
+            $curriculos = Curriculo::all()->sortBy('nome');
+        }
+        if(isset($_GET['selecao'])){
+            $profissao_id = $_GET['selecao'];
+            $profissao_id = str_replace('p','',$profissao_id);
+            if($profissao_id == "all"){
+                $curriculos = Curriculo::all()->sortBy('nome');
+            }else{
+                $curriculos = Curriculo::all()->where('profissao_id', $profissao_id);
+            }
+        }
         return view('curriculo.index',[
             'curriculos'=> $curriculos,
             'profissoes'=> $profissoes
