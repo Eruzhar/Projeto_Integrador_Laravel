@@ -19,19 +19,14 @@
                     </x-button-novo>
                 </a>                
         </div>
-    <div class="Filtro">
-        <h4>Ordem:</h4>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>Nome</option>
-            <option>Data</option>
-            <option>Tamanho</option>
-        </select>
-        <h4>Exibição:</h4>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>Lista</option>
-            <option>Galeria</option>
-        </select>
-    </div>
+        <form class="Filtro" method="get">
+            <h4>Ordem:</h4>
+            <select class="form-control" id="exampleFormControlSelect1" name="ordem">
+                <option value="titulo">Titulo</option>
+                <option value="created_at">Data</option>
+            </select>
+            <x-button-enviar descricao="Filtrar"></x-button-enviar>
+        </form>
     @if(isset($posts))
             <div class="DashBoard">       
                 @foreach($posts as $post)

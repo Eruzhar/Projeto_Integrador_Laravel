@@ -22,6 +22,11 @@ class PostController extends Controller
     public function indexAmbiente()
     {
         $categoria_id = $this->getCategoria_id("ambiente");
+        if(isset($_GET['ordem'])){
+            $posts = Post::all()->sortBy(strtolower($_GET['ordem']));
+        }else{
+            $posts = Post::all()->sortBy('titulo');
+        }
         $posts = $this->getIndex($categoria_id);
         return view("dashboard.ambienteDashboard", [
             "posts" => $posts
@@ -30,6 +35,11 @@ class PostController extends Controller
     public function indexCardapio()
     {
         $categoria_id = $this->getCategoria_id("cardapio");
+        if(isset($_GET['ordem'])){
+            $posts = Post::all()->sortBy(strtolower($_GET['ordem']));
+        }else{
+            $posts = Post::all()->sortBy('titulo');
+        }
         $posts = $this->getIndex($categoria_id);
         return view("dashboard.cardapioDashboard", [
             "posts" => $posts
@@ -37,15 +47,13 @@ class PostController extends Controller
     }
     public function indexGaleria(Request $request)
     {
-
         $categoria_id = $this->getCategoria_id("galeria");
 
         if(isset($_GET['ordem'])){
             $posts = Post::all()->sortBy(strtolower($_GET['ordem']));
         }else{
-            $posts = $this->getIndex($categoria_id);
+            $posts = Post::all()->sortBy('titulo');
         }
-        
        
         return view("dashboard.galeriaDashboard", [
             "posts" => $posts
