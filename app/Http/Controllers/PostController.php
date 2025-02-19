@@ -238,12 +238,17 @@ class PostController extends Controller
             'arquivo' =>'required',
         ]);
         $post = Post::findOrFail($id);
+        if ($request->hasFile("arquivo")) {
+            $fileName = now()->timestamp . '.' . $request->file('arquivo')->getClientOriginalExtension();
+            $request->file("arquivo")->storeAs("uploads", $fileName, "public");
+            $post->arquivo = $fileName;
+        }
         
         $post->titulo = $request->input('titulo');
         $post->descricao = $request->input('descricao');
-        $post->arquivo = $request->input('arquivo');
+//        $post->arquivo = $request->input('arquivo');
         $post->update();
-        return view('menu');
+        return redirect()->route('menu');
     }
 
     public function updateVisibilidade(Request $request, string $id)

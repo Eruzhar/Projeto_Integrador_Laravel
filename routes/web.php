@@ -114,7 +114,7 @@ Route::get('/dashboard/galeria/{id}/edit', [PostController::class, 'editGaleria'
 Route::delete('/dashboard/galeria{id}/destroy', [PostController::class, 'destroy'])->name('post.destroy');
 Route::get('/dashboard/galeria/index', [PostController::class, 'indexGaleria'])->name('indexGaleria');
 Route::put('/post/{id}/updateVisibilidade', [PostController::class, 'updateVisibilidade'])->name('updateVisibilidade');
-Route::put('/post/update', [PostController::class, 'update'])->name('post.update');
+Route::put('/post/{id}update', [PostController::class, 'update'])->name('post.update');
 
 
 
