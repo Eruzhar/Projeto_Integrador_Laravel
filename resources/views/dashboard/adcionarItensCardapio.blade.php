@@ -62,4 +62,5 @@
       </div>
     </form>
     <x-footer-dashboard></x-footer-dashboard>
+    @vite(['resources/js/galeria.js'])
 </x-layout-dashboard>
