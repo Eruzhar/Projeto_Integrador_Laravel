@@ -1,7 +1,6 @@
-const inputFile = document.getElementById("Imagem-up")
+const inputFile = document.getElementById("arquivo")
 
 inputFile.addEventListener('change', getImage);
-
 
 function getImage(e){
     const image = e.target.files[0]
@@ -17,11 +16,6 @@ function imageToBase64(image, callback){
     reader.readAsDataURL(image)
     reader.onload = () => callback(reader.result)
     reader.onerror = error => console.error(error)
-}
-
-function LimparImagem(){
-    document.getElementById('ImagemUpLoad').src = '../imagens/istockphoto-1147544807-1024x1024.jpg'
-    document.getElementById('Imagem-up').value = ''
 }
 
 function LimparFormulario(){
