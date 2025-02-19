@@ -13,7 +13,7 @@
             <a href="/dashboard/categoria">
                 <x-button-voltar descricao="Voltar para categoria"></x-button-voltar>
             </a>
-            <x-button-enviar descricao="Salvar"></x-button-enviar>
+            <x-button-salvar descricao="Salvar"></x-button-salvar>
         </form>
     </div>
 <x-footer-dashboard></x-footer-dashboard>
